@@ -14,13 +14,13 @@ import NavBar from './Components/NavBar';
 import HomeHeader from './Components/HomeHeader';
 import HomeFilterBarList from './Components/HomeFilterBarList';
 import HomeArrowUp from './Components/HomeArrowUp';
-import LeaguePage_Header from './Components/LeaguePage_Header';
-import LeaguePage_List from './Components/LeaguePage_List';
-import DetailSite_TeamHeader from './Components/DetailSite_TeamHeader';
-import DetailSite_Competitions from './Components/DetailSite_Competitions';
-import DetailSite_Descriptions from './Components/DetailSite_Descriptions';
-import DetailSite_Stadium from './Components/DetailSite_Stadium';
-import DeatilSite_Link from './Components/DetailSite_Links';
+import LeaguePageHeader from './Components/LeaguePageHeader';
+import LeaguePageList from './Components/LeaguePageList';
+import DetailSiteTeamHeader from './Components/DetailSiteTeamHeader';
+import DetailSiteCompetitions from './Components/DetailSiteCompetitions';
+import DetailSiteDescriptions from './Components/DetailSiteDescriptions';
+import DetailSiteStadium from './Components/DetailSiteStadium';
+import DeatilSiteLink from './Components/DetailSiteLinks';
 
 //Pages
 import DetailSite from './Pages/DetailSite';
@@ -45,14 +45,14 @@ function App() {
       <HomeFilterBarList />
       <HomeArrowUp />
        {/*Components-LeaguePage*/}
-      <LeaguePage_Header />
-      <LeaguePage_List />
+      <LeaguePageHeader />
+      <LeaguePageList />
        {/*Components-DetailSite*/}
-      <DetailSite_TeamHeader />
-      <DetailSite_Competitions />
-      <DetailSite_Descriptions />
-      <DetailSite_Stadium />
-      <DeatilSite_Link />
+      <DetailSiteTeamHeader />
+      <DetailSiteCompetitions />
+      <DetailSiteDescriptions />
+      <DetailSiteStadium />
+      <DeatilSiteLink />
     </div>
   );
 }
