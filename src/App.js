@@ -4,10 +4,7 @@ import './App.css';
 
 
 //Routing 
-import { BrowserRouter, Routes, Route} from "react-router-dom";
-
-//RoutingLink only for copy   import { Link } from "react-router-dom"
-
+import { BrowserRouter, Routes, Route, Link} from "react-router-dom";
 
 //Components
 import NavBar from './Components/NavBar';
@@ -33,27 +30,36 @@ import LeaguePage from './Pages/LeaguePage';
 
 function App() {
   return (
+    <BrowserRouter>
     <div className="App">
       {/*Pages*/}
-      <DetailSite />
-      <Home />
-      <LeaguePage />
-       {/*Component*/}
-      <NavBar />
-       {/*Components-Home*/}
-      <HomeHeader />
-      <HomeFilterBarList />
-      <HomeArrowUp />
-       {/*Components-LeaguePage*/}
-      <LeaguePageHeader />
-      <LeaguePageList />
-       {/*Components-DetailSite*/}
-      <DetailSiteTeamHeader />
-      <DetailSiteCompetitions />
-      <DetailSiteDescriptions />
-      <DetailSiteStadium />
-      <DeatilSiteLink />
+      <h1>Test Home</h1>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/league' element={<LeaguePage />} />
+        <Route path='/details' element={<DetailSite />} />
+  
+        {/* <DetailSite />
+        <Home />
+        <LeaguePage />
+        {/*Component*/}
+        {/* <NavBar /> */}
+        {/*Components-Home*/}
+        {/* <HomeHeader />
+        <HomeFilterBarList />
+        <HomeArrowUp /> */}
+        {/*Components-LeaguePage*/}
+        {/* <LeaguePageHeader />
+        <LeaguePageList /> */}
+        {/*Components-DetailSite*/}
+        {/* <DetailSiteTeamHeader />
+        <DetailSiteCompetitions />
+        <DetailSiteDescriptions />
+        <DetailSiteStadium />
+        <DeatilSiteLink /> */} */
+      </Routes>
     </div>
+    </BrowserRouter>
   );
 }
 
