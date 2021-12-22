@@ -7,7 +7,6 @@
     font-size: 1.8em;
     color: var(--white);
   }
-
 .LinkAnimation>.Left-to-right:after {
     position: absolute;
     content: "";
