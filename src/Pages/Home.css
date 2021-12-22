@@ -1,0 +1,30 @@
+.LinkAnimation {
+    width: 100%;
+    text-align: left;
+  }
+.LinkAnimation>.Left-to-right {
+    position: relative;
+    font-size: 1.8em;
+    color: var(--white);
+  }
+
+.LinkAnimation>.Left-to-right:after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    border-bottom: 3px solid var(--red);
+    transition: 0.4s ease-in-out;
+}
+.LinkAnimation>.Left-to-right:hover:after {
+    width: 60%;
+}
+
+
+
+
+
+
+
+
