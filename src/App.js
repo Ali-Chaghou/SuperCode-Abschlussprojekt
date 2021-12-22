@@ -6,8 +6,7 @@ import './App.css';
 //Routing 
 import { BrowserRouter, Routes, Route} from "react-router-dom";
 
-//RoutingLink only for copy   
-import { Link } from "react-router-dom"
+//RoutingLink only for copy   import { Link } from "react-router-dom"
 
 
 //Components
