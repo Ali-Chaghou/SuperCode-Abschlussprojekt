@@ -7,7 +7,7 @@ import './App.css';
 import { BrowserRouter, Routes, Route, Link} from "react-router-dom";
 
 //Components
-
+import Navbar from './Components/NavBar';
 
 //Pages
 import DetailSite from './Pages/DetailSite';
@@ -23,7 +23,7 @@ function App() {
     <BrowserRouter>
     <div className="App">
       {/*Pages*/}
-      <h1>Test Home</h1>
+      <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/league' element={<LeaguePage />} />
