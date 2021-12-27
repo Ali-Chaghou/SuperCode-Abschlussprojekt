@@ -28,7 +28,6 @@
 
 
 /*search-field*/
-
 .form-searchbar {
     width: 60px;
     height: 39px;
@@ -68,7 +67,7 @@
 
 
 /*media query*/
-@media screen and (min-width: 425px) {
+@media screen and (max-width: 425px) {
     .form-searchbar:hover {
       width: 100px;
     }
