@@ -33,7 +33,7 @@ function App() {
     <BrowserRouter>
     <div className="App">
       {/*Pages*/}
-      <h1>Test Home</h1>
+       
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/league' element={<LeaguePage />} />
