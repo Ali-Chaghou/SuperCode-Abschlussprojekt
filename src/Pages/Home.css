@@ -1,0 +1,28 @@
+
+.Left-to-right {
+    position: relative;
+    font-size: 1.8em;
+    color: var(--white);
+    text-align: left;
+  }
+
+.Left-to-right:after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    border-bottom: 3px solid var(--red);
+    transition: 0.4s ease-in-out;
+}
+.Left-to-right:hover:after {
+    width: 60%;
+}
+
+
+
+
+
+
+
+

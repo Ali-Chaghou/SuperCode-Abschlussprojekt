@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600;700&display=swap");
 
 :root {
-  --red: #e83539; 
+  --red: #e83539;
+  --white: #fff;
   /* color: var(--red) */
 }
 
@@ -15,6 +16,13 @@ body {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   color: white;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  text-transform: uppercase;
 }
 h1 {
   font-family: "Montserrat", sans-serif;
@@ -48,5 +56,3 @@ p {
   line-height: 180%;
   font-weight: 400;
 }
-
-
