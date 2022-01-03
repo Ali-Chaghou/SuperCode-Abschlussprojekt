@@ -53,8 +53,7 @@
 
 .detail-site header div {
     text-align: center;
-    max-width: 25vw;
-    /* margin-bottom: 48px; */
+    width: 40vw;
 }
 
 /*Ab hier MAIN*/
@@ -233,7 +232,6 @@ footer a{
         transform: rotate(0deg);
         font-size: 50px;
         margin-bottom: 50px;
-        transition: ease-in-out 0.5s;
     }
 
     .description p {
@@ -250,9 +248,15 @@ footer a{
 
 }
 
-/* .description h5 {
-    transform: rotate(90deg);
-    text-shadow: -1px -1px 0 var(--red), 1px -1px 0 var(--red), -1px 1px 0 var(--red), 1px 1px 0 var(--red);
-    color: black;
-    font-size: 86px;
-} */
+
+/*Name Verein Header*/
+@media screen and (max-width: 1040px) {
+    .detail-site h3 {
+        display: inline-block;
+        margin: 0 0 50px 0;
+        position: static;
+        width: 100%;
+        text-align: center;
+    }
+
+}
