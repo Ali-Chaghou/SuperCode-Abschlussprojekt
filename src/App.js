@@ -9,6 +9,7 @@ import { BrowserRouter, Routes, Route, Link} from "react-router-dom";
 //Components
 
 
+
 //Pages
 import DetailSite from './Pages/DetailSite';
 import Home from './Pages/Home';
@@ -24,6 +25,7 @@ function App() {
     <div className="App">
       {/*Pages*/}
       <h1>Test Home</h1>
+
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/league' element={<LeaguePage />} />
