@@ -1,14 +1,17 @@
 import "./Home.css";
 
+import HomeHeader from "../Components/HomeHeader.js";
+import HomeFilterBarList from "../Components/HomeFilterBarList.js";
+
 import { Link } from "react-router-dom";
 
 const Home = () => {
-    return ( 
-        
-           <h4 class="Left-to-right">English Premier League</h4>
-     
-    
-    );
-}
- 
+  return (
+    <section className="wrapper-Home">
+      <HomeHeader />
+      <HomeFilterBarList />
+    </section>
+  );
+};
+
 export default Home;
