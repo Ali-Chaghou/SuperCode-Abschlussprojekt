@@ -1,0 +1,262 @@
+.detail-site {
+  padding: 15vw 5vw 0 5vw;
+}
+
+/*Ab hier Titel und Bild Header*/
+.detail-site header {
+  position: relative;
+  margin-bottom: 144px;
+}
+
+.detail-site h3 {
+  color: var(--red);
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.detail-site img {
+  max-width: 100%;
+}
+
+.detail-site header section {
+  display: flex;
+  align-items: flex-end;
+}
+
+.detail-site header article {
+  width: 50%;
+}
+
+
+/*Ab hier Text Header links*/
+
+
+.detail-site h5{
+    margin-bottom: 0px;
+}
+
+.detail-site h4 span{
+    font-size: 18px;
+    height: 100%;
+
+}
+
+.detail-site h4 {
+    margin: 0px;
+    padding: 0px;
+    /* font-size: 0px; Muss hier gegeben werden das sonst abstände? */
+}
+
+.detail-site header div {
+    text-align: center;
+    width: 40vw;
+}
+
+/*Ab hier MAIN*/
+
+/*Ab hier Competitions*/
+
+.competitions{
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    margin-bottom: 144px;
+}
+
+.competitions div {
+    margin-top: 60px;
+}
+.competitions p {
+    margin-right: 50px
+}
+.competitions h5 {
+    margin-bottom: 36px;
+}
+
+/*Ab hier DEscription*/
+
+.description{
+    display: flex;
+    margin-bottom: 141px;
+    justify-content: center;
+}
+
+.description h5 {
+    transform: rotate(90deg);
+    text-shadow: -1px -1px 0 var(--red), 1px -1px 0 var(--red), -1px 1px 0 var(--red), 1px 1px 0 var(--red);
+    color: black;
+    font-size: 86px;
+}
+
+.description div:first-child{
+max-width: 15vw;
+}
+
+
+.description div:last-child{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.description p {
+    column-count: 2;
+    column-gap: 50px;
+    margin: -30px 0 96px 0;
+}
+
+/*Ab hier STADIUM*/
+.stadium{
+    margin-bottom: 144px;
+}
+.stadium h4 {
+margin-bottom: 48px
+}
+
+.stadium p {
+    column-count: 2;
+    column-gap: 50px;
+    margin-right: 164px;
+}
+
+.stadium-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.stadium-wrapper div:last-child{
+    text-align: center;
+}
+
+/*Ab hier Footer*/
+
+footer{
+    margin-bottom: 108px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+footer a{
+    font-size: 36px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    padding: 0 0 36px 0;
+    margin: 0 0 0 55vw;
+}
+
+/*Ab hier Responsive Design*/
+
+/*Tablet*/
+@media screen and (max-width: 768px) {
+    
+    .detail-site h3 {
+        display: inline-block;
+        margin: 0 0 50px 0;
+        position: static;
+        width: 100%;
+        text-align: center;
+    }
+
+
+    .stadium-wrapper{
+        display: block;
+    }
+
+    .stadium-wrapper p {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    footer a {
+        margin: 0;
+    }
+  }
+
+
+  /*Handy*/
+  @media screen and (max-width: 576px) {
+    
+    .detail-site {
+        text-align: center;
+    }
+
+    /*Ab hier Header*/
+    .detail-site header article:last-child{
+        display: none;
+    }
+
+    .detail-site header section{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .detail-site header article {
+        width: auto;
+    }
+  
+    /*Ab hier Competitions*/
+
+    .competitions {
+        display: block;
+        margin: auto;
+    }
+
+    .competitions p{
+        margin:auto;
+    }
+
+    /*Ab hier Description*/
+
+    .description{
+        display: block;
+    }
+
+    .description div:first-child {
+        max-width: 100%;
+    }
+    .description h5 {
+        transform: rotate(0deg);
+        font-size: 50px;
+        margin-bottom: 50px;
+    }
+
+    .description p {
+        column-count: 1;
+    }
+
+    /*Ab hier Stadium*/
+
+    .stadium-wrapper p{
+        column-count: 1;
+        
+    }
+
+
+}
+
+
+/*Name Verein Header*/
+@media screen and (max-width: 1040px) {
+    .detail-site h3 {
+        display: inline-block;
+        margin: 0 0 50px 0;
+        position: static;
+        width: 100%;
+        text-align: center;
+    }
+
+}
