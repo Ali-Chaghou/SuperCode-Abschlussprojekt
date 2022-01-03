@@ -11,7 +11,27 @@
     font-weight: 0;
 }
 
+.pfeil{
+  fill: var(--red);
+  cursor: pointer;
+  
+}
 
+.pfeil-innen:hover{
+  animation: fill 5s ease-in infinite;
+}
+
+
+@keyframes fill {
+  0%, 100%{
+    fill: green;
+    opacity: 50%;
+  }
+  50%{
+    fill: blue;
+    opacity: 100%;
+  }
+}
 
 /*Animation border bottom red */
 
