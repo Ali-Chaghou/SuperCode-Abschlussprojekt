@@ -104,9 +104,9 @@ class HomeFilterBarList extends React.Component {
         </section>
         <section className="list-wrapper">
           <div className="list">
-            <h4>
+            {/* <h4>
               English Premier League <span>Soccer</span>
-            </h4>
+            </h4> */}
           </div>
         </section>
       </div>
