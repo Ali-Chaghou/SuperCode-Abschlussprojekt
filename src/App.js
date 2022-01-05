@@ -58,20 +58,18 @@ class App extends React.Component {
           <main>
             {this.state.leagues.map((league) => (
               <article key={league}>
-                <h2 onClick={clicked}>{league.strLeague}</h2>
+                <h2>{league.strLeague}</h2>
                 
               </article>
             ))}
-          </main>
-
-
+          
 
 
 
           {/*Pages*/}
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/league" element={<LeaguePage />} />
+            <Route path="/league/:id" element={<LeaguePage leagues={this.state.leagues} />} />
             <Route path="/details" element={<DetailSite />} />
           </Routes>
         </div>
