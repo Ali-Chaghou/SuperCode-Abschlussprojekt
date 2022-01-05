@@ -8,76 +8,50 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Navbar from "./Components/NavBar";
 import Animation from "./Components/Animation";
 
-
-
 //Pages
 import DetailSite from "./Pages/DetailSite";
 import Home from "./Pages/Home";
 import LeaguePage from "./Pages/LeaguePage";
 
-
 class App extends React.Component {
   constructor() {
-  super()
-  this.state = {
-  leagues: [],
-  };
-}
-
-
-  componentDidMount() {
-    let pathname = window.location.pathname;
-    let id = pathname.substring(pathname.lastIndexOf("/") + 1, pathname.length);
-
-
-    fetch(`https://www.thesportsdb.com/api/v1/json/2/all_leagues.php/${id}`)
-      .then((res) => res.json())
-      .then((res) => {
-        (console.log(res.leagues))
-        this.setState({leagues: res.leagues});
-  });
+    super();
+    this.state = {
+      league: [],
+      details: [],
+    };
   }
 
-//   Searchbar = () => {
-
-//     let searchInput = document.querySelector('#input-search').value.toUpperCase();
-//     let searching = this.state.leagues.filter((league) => league.strSport.toUpperCase().includes(searchInput));
-//     this.setState({leagues: searching});
-// }
+  // getLeague = (leagueName) => {
+  //   componentDidMount() {
+  //     fetch(`https://www.thesportsdb.com/api/v1/json/2/search_all_teams.php?l=${leagueName}`)
+  //     then((res1) => res1.json())
+  //     then((res1) => {this.setState({ league: res1})});
+  //   }
+  // };
 
   render() {
-  return(
-        <BrowserRouter>
+    return (
+      <BrowserRouter>
         <div className="App">
-          
           <Navbar />
-
-
-
-
-          <main>
-            {this.state.leagues.map((league) => (
-              <article key={league}>
-                <h2>{league.strLeague}</h2>
-                
-              </article>
-            ))}
-            </main>
-          
-
-
-
-          {/*Pages - Test */}
+          <Animation />
+          {/*Pages*/}
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/league/:id" element={<LeaguePage leagues={this.state.leagues} />} />
-            <Route path="/details" element={<DetailSite />} />
+            <Route
+              path="/league"
+              element={<LeaguePage league={this.state.league} />}
+            />
+            <Route
+              path="/details"
+              element={<DetailSite details={this.state.details} />}
+            />
           </Routes>
         </div>
       </BrowserRouter>
-  )
-  };
-
+    );
+  }
 }
 
 export default App;
