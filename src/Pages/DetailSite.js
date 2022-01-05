@@ -12,37 +12,36 @@ class DetailSite extends React.Component {
         <header>
           <h3>Ar Senal</h3>
           <section>
-              <article className="detail-site-header-text">
-            <div>
-              <h5>England </h5>
-              <h4>
-                <span>Country</span>
-              </h4>
-            </div>
-            <div>
-              <h5>Holloway, London</h5>
-              <h4>
-                <span>Location</span>
-              </h4>
-            </div>
-            <div>
-              <h5>1892</h5>
-              <h4>
-                <span>Established</span>
-              </h4>
-            </div>
-            <div>
-              <h5>Soccer</h5>
-              <h4>
-                <span>Sport</span>
-              </h4>
-            </div>
-          </article>
-          <article>
-            <img src="img/background_img.jpg" alt="Image" />
-          </article>
+            <article className="detail-site-header-text">
+              <div>
+                <h5>England </h5>
+                <h4>
+                  <span>Country</span>
+                </h4>
+              </div>
+              <div>
+                <h5>Holloway, London</h5>
+                <h4>
+                  <span>Location</span>
+                </h4>
+              </div>
+              <div>
+                <h5>1892</h5>
+                <h4>
+                  <span>Established</span>
+                </h4>
+              </div>
+              <div>
+                <h5>Soccer</h5>
+                <h4>
+                  <span>Sport</span>
+                </h4>
+              </div>
+            </article>
+            <article>
+              <img src="img/background_img.jpg" alt="Image" />
+            </article>
           </section>
-          
         </header>
         <main>
           <article className="competitions">
@@ -99,7 +98,7 @@ class DetailSite extends React.Component {
             </div>
           </article>
           <article className="stadium">
-            <h4>Stadium</h4>
+            <h6>Stadium</h6>
             <div className="stadium-wrapper">
               <p>
                 The Emirates Stadium (known as Ashburton Grove prior to
@@ -113,12 +112,12 @@ class DetailSite extends React.Component {
                 home stadium, Highbury. After considering various options
                 (including purchasing Wembley Stadium), the club bought an
                 industrial and waste disposal estate in Ashburton Grove in 2000.
-                A year later, they received the council's
-                approval to build a stadium on the site; manager Arsène Wenger
-                described this as the \"biggest decision in Arsenal's history\"
-                since the board appointed Herbert Chapman. Relocation began in
-                2002, but financial difficulties delayed work until February
-                2004. Emirates was later announced as the main sponsor for the
+                A year later, they received the council's approval to build a
+                stadium on the site; manager Arsène Wenger described this as the
+                \"biggest decision in Arsenal's history\" since the board
+                appointed Herbert Chapman. Relocation began in 2002, but
+                financial difficulties delayed work until February 2004.
+                Emirates was later announced as the main sponsor for the
                 stadium. The entire stadium project was completed in 2006 at a
                 cost of £390 million. The club's former stadium was redeveloped
                 as Highbury Square, an apartment complex.\r\n\r\nThe stadium has
@@ -127,24 +126,26 @@ class DetailSite extends React.Component {
                 hosted international fixtures and music concerts.
               </p>
               <div>
-                <h5>Emirates Ståadium</h5>
-                <h4>
+                <div>
+                  <h5>Emirates Ståadium</h5>
                   <span>Home</span>
-                </h4>
-                <h5>60338</h5>
-                <h4>
-                  <span>Capacity</span>
-                </h4>
+                </div>
+                <div>
+                  <h5>60338</h5>
+                  <h4>
+                    <span>Capacity</span>
+                  </h4>
+                </div>
               </div>
             </div>
           </article>
         </main>
         <footer>
-        <a href="#">Website</a>
-        <a href="#">Facebook</a>
-        <a href="#">Twitter</a>
-        <a href="#">Instagram</a>
-        <a href="#">Youtube</a>
+          <a href="#">Website</a>
+          <a href="#">Facebook</a>
+          <a href="#">Twitter</a>
+          <a href="#">Instagram</a>
+          <a href="#">Youtube</a>
         </footer>
       </section>
     );

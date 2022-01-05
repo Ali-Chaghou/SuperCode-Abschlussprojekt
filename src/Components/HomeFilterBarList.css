@@ -1,0 +1,165 @@
+.filterbar-list {
+  margin: 0 48px 96px 48px;
+}
+
+.filterbar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 96px;
+}
+/* Anzeige ausgwähltes Land */
+.chosen-country {
+  width: fit-content;
+  height: 41px;
+  border: solid 4px white;
+  padding: 0 14px;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
+.chosen-country img {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* Dropdown Menues */
+.select-wrapper-down,
+.select-wrapper-up {
+  position: relative;
+  width: 300px;
+  /* margin-left: 18px; */
+}
+.select {
+  background-color: transparent;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: left;
+  padding-left: 10px;
+  width: 300px;
+  height: 40px;
+  border: solid 4px white;
+  cursor: pointer;
+}
+.select-wrapper-down::after {
+  content: url("../Images/arrow-down.png");
+  position: absolute;
+  right: 12px;
+  top: 10px;
+  pointer-events: none;
+}
+.select-wrapper-up::after {
+  content: url("../Images/arrow-up.png");
+  position: absolute;
+  right: 12px;
+  top: 10px;
+  pointer-events: none;
+}
+
+/* .select-wrapper::after {
+  content: url("../Images/arrow-up.png");
+  position: absolute;
+  right: 12px;
+  top: 10px;
+  pointer-events: none;
+  display: none;
+} */
+.dropdown-wrapper {
+  position: relative;
+}
+.dropdown {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 300px;
+  height: 150px;
+  border: solid 4px white;
+  border-top: none;
+  overflow: scroll;
+  display: none;
+}
+.container {
+  position: relative;
+  height: 40px;
+  border-bottom: solid 2px white;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 600;
+  appearance: none;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  padding-left: 40px;
+}
+/* hide default check box */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+/*custom check box */
+.checkmark {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  height: 16px;
+  width: 16px;
+  border: white 2px solid;
+  background-color: transparent;
+}
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 4px;
+  top: 0px;
+  width: 3px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+/* .dropdowns {
+  display: flex;
+}
+.countrySelect {
+  margin-right: 18px;
+}
+select {
+  width: 100%;
+  height: 41px;
+  border: solid 4px white;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  appearance: none;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+}
+.select-wrapper {
+  position: relative;
+  width: 300px;
+  margin-left: 18px;
+}
+.select-wrapper::after {
+  content: url("../Images/arrow-down.png");
+  position: absolute;
+  right: 12px;
+  top: 10px;
+  pointer-events: none;
+} */
