@@ -1,4 +1,5 @@
 import "./App.css";
+import React from "react";
 
 //Routing
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
@@ -6,6 +7,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 //Components
 import Navbar from "./Components/NavBar";
 import Animation from "./Components/Animation";
+
 
 
 //Pages
@@ -31,3 +33,20 @@ function App() {
 }
 
 export default App;
+
+
+// function App() {
+//   return (
+//     <BrowserRouter>
+//       <div className="App">
+        
+//         <Navbar />
+//         {/*Pages*/}
+//         <Routes>
+//           <Route path="/" element={<Home />} />
+//           <Route path="/league" element={<LeaguePage />} />
+//           <Route path="/details" element={<DetailSite />} />
+//         </Routes>
+//       </div>
+//     </BrowserRouter>
+//   );
