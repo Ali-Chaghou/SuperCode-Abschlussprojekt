@@ -62,6 +62,7 @@ class App extends React.Component {
                 
               </article>
             ))}
+            </main>
           
 
 
