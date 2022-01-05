@@ -67,10 +67,14 @@
 
 
 /*media query*/
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 768px) {
     .form-searchbar:hover {
-      width: 100px;
+      width: 200px;
     }
   }
-
-
+  
+@media screen and (max-width: 576px) {
+    .form-searchbar:hover {
+      width: 80px;
+    }
+  }
