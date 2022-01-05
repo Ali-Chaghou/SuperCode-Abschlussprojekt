@@ -66,7 +66,7 @@ class App extends React.Component {
 
 
 
-          {/*Pages*/}
+          {/*Pages - Test */}
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/league/:id" element={<LeaguePage leagues={this.state.leagues} />} />
