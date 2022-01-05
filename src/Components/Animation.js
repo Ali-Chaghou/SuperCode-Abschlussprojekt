@@ -6,44 +6,88 @@ import Arrow from "../Images/Arrow.png";
 const Animation = () => {
   return (
     <div className="Animation">
-      <h4 class="Left-to-right">
-        English Premier League <span> Soccer</span>
+      <h4 className="Left-to-right">
+        English Premier League <span>hallo</span>
       </h4>
 
-      {/* <div className="Arrow">
-        <div className="Arrow-up"></div>
-        <div className="Arrow-foot"></div>
-        <div className="Arrow-block"></div>
-        <div className="Arrow-block-1"></div>
-      </div> */}
+     
 
       <div class="icon">
+       
+
         <svg
-        
-          xmlns="http://www.w3.org/2000/svg"
-          width="56.001"
-          height="79"
-          viewBox="0 0 56.001 79"
-        >
-          <g
-          className="pfeil-innen"
-            id="Vereinigungsmenge_1"
-            data-name="Vereinigungsmenge 1"
-            transform="translate(-8916.999 3339.999)"
-            fill="none"
+        className="pfeil"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 72 102"
+            width="72"
+            height="102"
           >
-            <path d="M8935-3261v-39h-18l28-40,28,40h-18v39Z" stroke="none" />
+            <defs>
+              <clipPath id="clip-path">
+                <polygon
+                  points="47.5 59 47.5 102 24.5 102 24.5 59 0 59 36 0 72 59 47.5 59"
+                />
+              </clipPath>
+            </defs>
+            <g>
+              <rect
+              className="pfeil-innen"
+                y="102"
+                width="72"
+                height="102"
+                fill="#E83539"
+                clipPath="url(#clip-path)"
+              />
+            </g>
             <path
-            className="pfeil"
-              d="M 8952.0009765625 -3263.999267578125 L 8952.0009765625 -3303.00048828125 L 8967.23828125 -3303.00048828125 L 8945 -3334.76806640625 L 8922.7607421875 -3303.00048828125 L 8937.9990234375 -3303.00048828125 L 8937.9990234375 -3263.999267578125 L 8952.0009765625 -3263.999267578125 M 8955.0009765625 -3260.999267578125 L 8934.9990234375 -3260.999267578125 L 8934.9990234375 -3300.00048828125 L 8916.9990234375 -3300.00048828125 L 8945 -3339.999267578125 L 8973 -3300.00048828125 L 8955.0009765625 -3300.00048828125 L 8955.0009765625 -3260.999267578125 Z"
-              stroke="none"
-              fill="blue"
+              className="cls-3"
+              d="M36,7.68,64.87,55H43.5V98h-15V55H7.13L36,7.68M36,0,0,59H24.5v43h23V59H72L36,0Z"
+              fill="#E83539"
+            />
+          </svg>
+
+
+
+
+
+
+
+
+
+
+
+
+        {/* <svg 
+          id="svg"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 72 102"
+          width="72"
+          height="102"
+        >
+          
+            <defs>
+              <clipPath id="clip-path">
+                <polygon points="47.5 59 47.5 102 24.5 102 24.5 59 0 59 36 0 72 59 47.5 59" />
+              </clipPath>
+            </defs>
+          
+          <g >
+            <rect mask="url('clip-path')"
+              id="rect"
+              width="72"
+              height="102"
+              fill="#E83539"
+              clipPath="url(#clip-path)"
             />
           </g>
-        </svg>
 
-    
-
+        
+          <path
+            className="cls-3"
+            d="M36,7.68,64.87,55H43.5V98h-15V55H7.13L36,7.68M36,0,0,59H24.5v43h23V59H72L36,0Z"
+            fill="#E83539"
+          />
+        </svg> */}
       </div>
 
       <div className="ScaleAnimation-Container">

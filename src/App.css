@@ -43,11 +43,13 @@ h3 {
 }
 h4 {
   font-family: "Montserrat", sans-serif;
+  font-size: 48px;
 }
 h4 span {
   font-family: "Open Sans", sans-serif;
   font-size: 24px;
   font-weight: 400;
+  text-transform: none;
 }
 h5 {
   font-size: 36px;
@@ -97,6 +99,7 @@ h3 {
     P{
       font-size: 16px;
     }
+
 }
 
 /*Handy*/
