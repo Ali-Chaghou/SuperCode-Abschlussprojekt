@@ -22,31 +22,20 @@ class App extends React.Component {
     };
   }
 
-  // getLeague = (leagueName) => {
-  //   componentDidMount() {
-  //     fetch(`https://www.thesportsdb.com/api/v1/json/2/search_all_teams.php?l=${leagueName}`)
-  //     then((res1) => res1.json())
-  //     then((res1) => {this.setState({ league: res1})});
-  //   }
-  // };
+  testMeParent = () => {
+    console.log("Hallo");
+  };
 
   render() {
     return (
       <BrowserRouter>
         <div className="App">
-          <Navbar />
-          <Animation />
+          <Navbar testMe={this.testMeParent} />
           {/*Pages*/}
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route
-              path="/league"
-              element={<LeaguePage league={this.state.league} />}
-            />
-            <Route
-              path="/details"
-              element={<DetailSite details={this.state.details} />}
-            />
+            <Route path="/league/:id" element={<LeaguePage />} />
+            <Route path="/details/:id" element={<DetailSite />} />
           </Routes>
         </div>
       </BrowserRouter>
@@ -55,20 +44,3 @@ class App extends React.Component {
 }
 
 export default App;
-
-
-// function App() {
-//   return (
-//     <BrowserRouter>
-//       <div className="App">
-        
-//         <Navbar />
-//         {/*Pages*/}
-//         <Routes>
-//           <Route path="/" element={<Home />} />
-//           <Route path="/league" element={<LeaguePage />} />
-//           <Route path="/details" element={<DetailSite />} />
-//         </Routes>
-//       </div>
-//     </BrowserRouter>
-//   );

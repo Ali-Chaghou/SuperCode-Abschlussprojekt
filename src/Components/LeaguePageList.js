@@ -1,6 +1,6 @@
 
 import React from "react";
-import {Link} from "react-router-dom"
+// import {Link} from "react-router-dom"
 import "./LeaguePageList";
 
 //Link
@@ -10,14 +10,14 @@ const LeaguePageList = (props) => {
     console.log(props.leagues)
     return ( 
         <main>
-        {props.leagues.map((league) => (
+        {/* {props.leagues.map((league) => (
           <article key={league.strSport}>
             <h2>{league.strLeagues}</h2>
             <Link to={`/league/${league._id}`} id={league._id}>
             {league.strLeague}
             </Link>
           </article>
-        ))}
+        ))} */}
       </main>
      );
 }

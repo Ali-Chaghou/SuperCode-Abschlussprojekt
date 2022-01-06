@@ -15,11 +15,15 @@ class HomeFilterBarList extends React.Component {
     };
   }
 
+  // testMe = () => {
+  //   this.props.testMe();
+  // };
+
   componentDidMount() {
     fetch("https://www.thesportsdb.com/api/v1/json/2/all_countries.php")
       .then((res1) => res1.json())
       .then((res1) => {
-        console.log(res1);
+        // console.log(res1);
         this.setState({ allcountries: res1.countries });
       });
 
@@ -64,7 +68,7 @@ class HomeFilterBarList extends React.Component {
     return (
       <div className="filterbar-list">
         <section className="filterbar">
-          <div className="chosen-country">
+          {/* <div className="chosen-country">
             <img src={Close} alt="close" onClick={this.hideCountry}></img>
             {this.state.chosenCountry}
           </div>
@@ -108,12 +112,12 @@ class HomeFilterBarList extends React.Component {
                 ))}
               </div>
             </div>
-          </div>
+          </div> */}
         </section>
         <section className="list-wrapper">
           <div className="list">
             {this.state.allLeagues.map((league) => (
-              <Link to={"/league"}>
+              <Link to={`/league/${league.strLeague}`}>
                 <h4 key={league.strLeague}>
                   {league.strLeague} <span>{league.strSport}</span>
                 </h4>
