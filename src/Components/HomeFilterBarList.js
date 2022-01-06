@@ -1,5 +1,6 @@
 import "./HomeFilterBarList.css";
 import React from "react";
+import { Link } from "react-router-dom";
 
 import Close from "../Images/close.png";
 
@@ -7,6 +8,7 @@ class HomeFilterBarList extends React.Component {
   constructor() {
     super();
     this.state = {
+      allLeagues: [],
       allcountries: [],
       allsports: [],
       chosenCountry: "",
@@ -15,11 +17,17 @@ class HomeFilterBarList extends React.Component {
 
   componentDidMount() {
     fetch("https://www.thesportsdb.com/api/v1/json/2/all_countries.php")
-      .then((res) => res.json())
-      .then((res) => {
-        console.log(res);
-        this.setState({ allcountries: res.countries });
-        // console.log(this.state.allcountries);
+      .then((res1) => res1.json())
+      .then((res1) => {
+        console.log(res1);
+        this.setState({ allcountries: res1.countries });
+      });
+
+    fetch("https://www.thesportsdb.com/api/v1/json/2/all_leagues.php")
+      .then((res2) => res2.json())
+      .then((res2) => {
+        console.log(res2);
+        this.setState({ allLeagues: res2.leagues });
       });
   }
 
@@ -104,9 +112,13 @@ class HomeFilterBarList extends React.Component {
         </section>
         <section className="list-wrapper">
           <div className="list">
-            <h4>
-              English Premier League <span>Soccer</span>
-            </h4>
+            {this.state.allLeagues.map((league) => (
+              <Link to={"/league"}>
+                <h4 key={league.strLeague}>
+                  {league.strLeague} <span>{league.strSport}</span>
+                </h4>
+              </Link>
+            ))}
           </div>
         </section>
       </div>
