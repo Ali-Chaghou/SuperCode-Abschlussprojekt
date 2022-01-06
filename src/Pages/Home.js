@@ -6,7 +6,7 @@ import LeaguePageList from "../Components/LeaguePageList"
 
 import { Link } from "react-router-dom";
 
-const Home = () => {
+const Home = (props) => {
   return (
     <section className="wrapper-Home">
       <HomeHeader />
