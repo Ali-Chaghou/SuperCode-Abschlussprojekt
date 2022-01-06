@@ -31,7 +31,7 @@ class LeaguePage extends React.Component {
           <div className="list">
             {this.state.chosenLeague.map((team) => (
               <Link to={`/details/${team.strTeam}`}>
-                <h4 key={team.strTeam}>
+                <h4 key={team.strTeam} className="ScaleAnimation">
                   {team.strTeam} <span>{team.strStadiumLocation}</span>
                 </h4>
               </Link>

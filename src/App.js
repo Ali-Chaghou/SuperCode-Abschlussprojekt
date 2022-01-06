@@ -31,6 +31,7 @@ class App extends React.Component {
       <BrowserRouter>
         <div className="App">
           <Navbar testMe={this.testMeParent} />
+          <Animation />
           {/*Pages*/}
           <Routes>
             <Route path="/" element={<Home />} />
