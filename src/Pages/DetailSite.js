@@ -92,10 +92,10 @@ class DetailSite extends React.Component {
           <article className="competitions">
             <p>Competitions</p>
             <div>
-              <h5>Uefa Europa League</h5>
-              <h5>Fa Cup</h5>
-              <h5>Efl Cup</h5>
-              <h5>Fa Communit Shield</h5>
+              <h5 className="Left-to-right" >Uefa Europa League</h5>
+              <h5 className="Left-to-right" >Fa Cup</h5>
+              <h5 className="Left-to-right" >Efl Cup</h5>
+              <h5 className="Left-to-right" >Fa Communit Shield</h5>
             </div>
           </article>
           <article className="description">
@@ -186,12 +186,21 @@ class DetailSite extends React.Component {
           </article>
         </main>
         <footer>
+<<<<<<< HEAD
           <a href="#">Website</a>
           <a href="#">Facebook</a>
           <a href="#">Twitter</a>
           <a href="#">Instagram</a>
           <a href="#">Youtube</a>
         </footer> */}
+=======
+          <a className="Left-to-right" href="#">Website</a>
+          <a className="Left-to-right" href="#">Facebook</a>
+          <a className="Left-to-right" href="#">Twitter</a>
+          <a className="Left-to-right" href="#">Instagram</a>
+          <a className="Left-to-right" href="#">Youtube</a>
+        </footer>
+>>>>>>> b09a805b430c0aaa7d0cced4d8c3afeaeb8a7959
       </section>
     );
   }

@@ -4,7 +4,6 @@ import React from "react";
 import "./LeaguePageList";
 
 //Link
-import { Link } from "react-router-dom";
 
 const LeaguePageList = (props) => {
     console.log(props.leagues)
