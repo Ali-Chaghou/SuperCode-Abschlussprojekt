@@ -4,13 +4,58 @@ import "./DetailSite.css";
 class DetailSite extends React.Component {
   constructor() {
     super();
+    this.state = {
+      chosenTeam: [],
+    };
   }
+
+  componentDidMount() {
+    let pathname = window.location.pathname;
+    let leagueName = pathname.substring(
+      pathname.lastIndexOf("/") + 1,
+      pathname.lastIndexOf("+") + 1
+    );
+    let teamName = pathname.substring(
+      pathname.lastIndexOf("+") + 1,
+      pathname.length
+    );
+    console.log("TeamName: " + teamName.replace(/%/g," "));
+
+    fetch(
+      `https://www.thesportsdb.com/api/v1/json/2/search_all_teams.php?l=${leagueName}`
+    )
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({
+          chosenTeam: res.teams.filter((team) =>
+            team.strTeam.includes(teamName.replace(/%/g," "))
+          ),
+        });
+      });
+  }
+
+  // selectTeam = () => {
+  //   let ourTeam = this.state.chosenTeam.filter((team) =>
+  //     team.strTeam.includes("Arsenal")
+  //   );
+  //   this.setState({ chosenTeam: ourTeam });
+  //   console.log("selectTeamworks");
+  //   // console.log(this.state.chosenTeam.);
+  // };
 
   render() {
     return (
       <section className="detail-site">
-        <header>
-          <h3>Ar Senal</h3>
+        <div className="test">
+          {this.state.chosenTeam.map((team, index) => (
+            <div to={`/details/${team.strLeague}`}>
+              <h4 key={index}>
+                {team.strTeam} <span>{team.strStadiumLocation}</span>
+              </h4>
+            </div>
+          ))}
+        </div>
+        {/* <header>
           <section>
             <article className="detail-site-header-text">
               <div>
@@ -146,7 +191,7 @@ class DetailSite extends React.Component {
           <a href="#">Twitter</a>
           <a href="#">Instagram</a>
           <a href="#">Youtube</a>
-        </footer>
+        </footer> */}
       </section>
     );
   }
