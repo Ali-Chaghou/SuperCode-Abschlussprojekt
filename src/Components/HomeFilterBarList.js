@@ -114,9 +114,9 @@ class HomeFilterBarList extends React.Component {
           <div className="list">
             {this.state.allLeagues.map((league, index) => (
               <Link to={`/league/${league.strLeague}`}>
-                <h4 key={index}>
+                <h4 key={index}> {/*evtl. classe mit animation left-to-right hinzufügen*/}
                   {league.strLeague} <span>{league.strSport}</span>
-                </h4>
+                </h4><br />
               </Link>
             ))}
           </div>

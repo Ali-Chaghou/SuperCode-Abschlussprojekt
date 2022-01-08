@@ -29,9 +29,15 @@ class LeaguePage extends React.Component {
       <div className="div-league">
         <section className="list-wrapper">
           <div className="list">
+<<<<<<< HEAD
+            {this.state.chosenLeague.map((team) => (
+              <Link to={`/details/${team.strTeam}`}>
+                <h4 key={team.strTeam} className="ScaleAnimation">
+=======
             {this.state.chosenLeague.map((team, index) => (
               <Link to={`/details/${team.strLeague + "+" + team.strTeam}`}>
                 <h4 key={index}>
+>>>>>>> 6a11255aa21b86178f517c277362fa1c4c67068a
                   {team.strTeam} <span>{team.strStadiumLocation}</span>
                 </h4>
               </Link>

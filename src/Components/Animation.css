@@ -1,35 +1,27 @@
-/*Generals*/
-.Animation{
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   flex-direction: column;
-}
-
-.Animation span{
-    font-size: 24px;
-    font-weight: 0;
-}
-
-
-
+/*Scroll-Animation Arrow*/
 .pfeil:hover .pfeil-innen {
   y: 0;
-  transition: all .5s ease-in;
-}  
+  transition: all 1s linear;
+  cursor: pointer;
+}  /*fehlt noch: wenn man runter geht, Füllung lässt von oben nach unten nach*/
+
+.icon-sticky {
+ position: fixed;
+ bottom: 50px;
+ right: 50px;
+} /*sticky funktioniert noch nicht*/
 
 
 
-/*Unterstrich*/
 
-
-
+/*Hover Effect Underline*/
 .Left-to-right {
     position: relative;
     z-index: 1;
+    display: inline;
   }
 
-.Left-to-right::before  {
+.Left-to-right::after  {
     position: absolute;
     content: "";
     bottom: 0;
@@ -40,19 +32,24 @@
     z-index: -1;
    
 }
-.Left-to-right:hover::before {
+.Left-to-right:hover::after {
     width: 100%;
     z-index: -1;
    
 }
 
 
-/*Scale Animation */
 
+
+
+
+
+
+/*Hover Effect Scale*/
 .ScaleAnimation-Container {
   display: inline;
 }
-
+/*.ScaleAnimation-Container überhaupt notwendig?*/
 
 .ScaleAnimation-Container:hover {
   /* width: 100%; */

@@ -42,7 +42,7 @@ class Navbar extends React.Component {
 
     render() { 
         return(
-         <div className='div-navbar'>
+         <div className='div-navbar navbar-sticky'>
 
          <div className='div-logo'>
             <h4 className='h4-navbar'>
