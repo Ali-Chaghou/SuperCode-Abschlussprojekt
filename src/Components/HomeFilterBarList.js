@@ -15,10 +15,6 @@ class HomeFilterBarList extends React.Component {
     };
   }
 
-  // testMe = () => {
-  //   this.props.testMe();
-  // };
-
   componentDidMount() {
     fetch("https://www.thesportsdb.com/api/v1/json/2/all_countries.php")
       .then((res1) => res1.json())
@@ -116,9 +112,9 @@ class HomeFilterBarList extends React.Component {
         </section>
         <section className="list-wrapper">
           <div className="list">
-            {this.state.allLeagues.map((league) => (
+            {this.state.allLeagues.map((league, index) => (
               <Link to={`/league/${league.strLeague}`}>
-                <h4 key={league.strLeague} className="Left-to-right">
+                <h4 key={index}> {/*evtl. classe mit animation left-to-right hinzufügen*/}
                   {league.strLeague} <span>{league.strSport}</span>
                 </h4><br />
               </Link>
