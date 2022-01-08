@@ -30,18 +30,13 @@ class LeaguePage extends React.Component {
       <div className="div-league">
         <section className="list-wrapper">
           <div className="list">
-
-            {/* {this.state.chosenLeague.filter(team => team.strLeague.toUpperCase().includes(this.props.searchQuery.toUpperCase()))
-                                  .map((team, index) => ( */}
-
-
-
-            {this.state.chosenLeague.map((team, index) => (
+            {this.state.chosenLeague.filter(team => team.strTeam.toUpperCase().includes(this.props.searchQuery.toUpperCase()))
+                                  .map((team, index) => (
               <Link to={`/details/${team.strLeague + "+" + team.strTeam}`}>
-                <h4 key={index}> {/*Klasse-Animation hinztufügen*/}
+                <h4 key={index} className="ScaleAnimation"> {/*Klasse-Animation hinztufügen*/}
                   {team.strTeam} <span>{team.strStadiumLocation}</span>
                 </h4>
-              </Link>
+              </Link> 
             ))}
           </div>
         </section>

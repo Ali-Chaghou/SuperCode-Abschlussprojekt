@@ -4,8 +4,6 @@ import HomeHeader from "../Components/HomeHeader.js";
 import HomeFilterBarList from "../Components/HomeFilterBarList.js";
 import LeaguePageList from "../Components/LeaguePageList"
 
-import { Link } from "react-router-dom";
-
 const Home = (props) => {
   return (
     <section className="wrapper-Home">
