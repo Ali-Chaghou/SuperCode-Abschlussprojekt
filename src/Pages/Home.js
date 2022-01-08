@@ -10,7 +10,7 @@ const Home = (props) => {
   return (
     <section className="wrapper-Home">
       <HomeHeader />
-      <HomeFilterBarList />
+      <HomeFilterBarList searchQuery={props.searchQuery}/>
       <LeaguePageList />
     </section>
   );

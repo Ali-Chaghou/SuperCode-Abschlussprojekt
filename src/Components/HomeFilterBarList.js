@@ -112,7 +112,8 @@ class HomeFilterBarList extends React.Component {
         </section>
         <section className="list-wrapper">
           <div className="list">
-            {this.state.allLeagues.map((league, index) => (
+            {this.state.allLeagues.filter(league => league.strLeague.toUpperCase().includes(this.props.searchQuery.toUpperCase()))
+                                  .map((league, index) => (
               <Link to={`/league/${league.strLeague}`}>
                 <h4 key={index}> {/*evtl. classe mit animation left-to-right hinzufügen*/}
                   {league.strLeague} <span>{league.strSport}</span>
@@ -127,3 +128,5 @@ class HomeFilterBarList extends React.Component {
 }
 
 export default HomeFilterBarList;
+
+//unter 115 allLeagues filter einbauen, die query enthalten

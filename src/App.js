@@ -17,25 +17,30 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
+      searchQuery: '',
       league: [],
       details: [],
     };
   }
 
-  testMeParent = () => {
-    console.log("Hallo");
+  changeQuery = (query) => {
+    console.log('changeQuery--'+query);
+    this.setState( state => ({
+      searchQuery: query
+    })
+    );
   };
 
   render() {
     return (
       <BrowserRouter>
         <div className="App">
-          <Navbar testMe={this.testMeParent} />
+          <Navbar changeQuery={this.changeQuery} searchQuery={this.state.searchQuery}/>
           <Animation />
           {/*Pages*/}
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/league/:id" element={<LeaguePage />} />
+            <Route path="/" element={<Home searchQuery={this.state.searchQuery}/>} />
+            <Route path="/league/:id" element={<LeaguePage changeQuery={this.changeQuery}/>} />
             <Route path="/details/:id" element={<DetailSite />} />
           </Routes>
         </div>

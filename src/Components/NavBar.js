@@ -16,6 +16,7 @@ class Navbar extends React.Component {
         leagues: [],
         };
       }
+   
 
 
     //   componentDidMount() {
@@ -38,6 +39,17 @@ class Navbar extends React.Component {
     //     let searching = this.state.leagues.filter((league) => league.strSport.toUpperCase().includes(searchInput));
     //     this.setState({leagues: searching});
     // }
+
+    onQueryEnter = () => {
+        let input = document.querySelector('#input-search').value;
+        console.log(input);
+        this.props.changeQuery(input);
+        if(input.length > 0){
+            //setz css so dass es nicht klein wird
+        } else {
+            // lösche das attribut dass es wieder klein werden kann
+        }
+    }
    
 
     render() { 
@@ -62,7 +74,7 @@ class Navbar extends React.Component {
         
         <form className='form-searchbar'>
             <img src={Loupe} alt='searchloupe'></img>
-            <input type='text' id='input-search' className='input-search'></input>
+            <input type='text' id='input-search' className='input-search' onChange={this.onQueryEnter} value={this.props.searchQuery}></input>
         </form>
 
     </div>
@@ -73,3 +85,7 @@ class Navbar extends React.Component {
  
 export default Navbar;
 
+
+
+//wenn eine query im App.js-state vorhanden ist, dann zeige die an
+//wenn eine query in Suche eingegeben wird, muss diese in App.js-state gespeichert werden
