@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./DetailSite.css";
 
 class DetailSite extends React.Component {
@@ -9,17 +10,23 @@ class DetailSite extends React.Component {
     };
   }
 
+  
+
   componentDidMount() {
-    let pathname = window.location.pathname;
-    let leagueName = pathname.substring(
-      pathname.lastIndexOf("/") + 1,
-      pathname.lastIndexOf("+") + 1
+    let pathname2 = window.location.pathname;
+    let leagueName = pathname2.substring(
+      pathname2.lastIndexOf("/") + 1,
+      pathname2.lastIndexOf("+") + 1
     );
-    let teamName = pathname.substring(
-      pathname.lastIndexOf("+") + 1,
-      pathname.length
+    let teamName = pathname2.substring(
+      pathname2.lastIndexOf("+") + 1,
+      pathname2.length
     );
     console.log("TeamName: " + teamName.replace(/%/g, " "));
+
+
+
+
 
     fetch(
       `https://www.thesportsdb.com/api/v1/json/2/search_all_teams.php?l=${leagueName}`
@@ -33,6 +40,16 @@ class DetailSite extends React.Component {
         });
       });
   }
+
+
+
+ 
+
+
+
+
+
+
 
   // selectTeam = () => {
   //   let ourTeam = this.state.chosenTeam.filter((team) =>
@@ -128,10 +145,16 @@ class DetailSite extends React.Component {
                 </main>
                 <footer>
                   <a href={team.strWebsite} target="_blank" >Website</a>
-                  <a href={team.strFacebook} target="_blank">Facebook</a>
+                  <a href="www.facebook.com/Arsenal"  rel="noopener noreferrer">Facebook</a>
                   <a href={team.strTwitter} target="_blank">Twitter</a>
                   <a href={team.strInstagram} target="_blank">Instagram</a>
                   <a href={team.strYoutube} target="_blank">Youtube</a>
+                  <Link to={{pathname: "www.facebook.com/Arsenal"} } target="_blank">test</Link>
+                  
+                  {/* <Link to={ `{team.strYoutube} } target="_blank">test</Link>
+                  <td onClick={()=> window.open(href={team.strYoutube} target="_blank")}>test</td> */}
+                  {/* <a onClick={()=> Linking.openURL(`${team.strYoutube}`)}>test</a> */}
+                {/* <a onClick={()=> window.location=}>test</a> */}
                 </footer>
               </div>
             </article>
@@ -141,5 +164,7 @@ class DetailSite extends React.Component {
     );
   }
 }
+
+
 
 export default DetailSite;
