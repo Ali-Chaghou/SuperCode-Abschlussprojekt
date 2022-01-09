@@ -2,7 +2,7 @@ import "./App.css";
 import React from "react";
 
 //Routing
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
 
 //Components
 import Navbar from "./Components/NavBar";
@@ -24,23 +24,26 @@ class App extends React.Component {
   }
 
   changeQuery = (query) => {
-    console.log('changeQuery--'+query);
+    console.log('changeQuery--'+ query);
     this.setState( state => ({
       searchQuery: query
     })
     );
   };
 
+
+
+
   render() {
     return (
       <BrowserRouter>
         <div className="App">
           <Navbar changeQuery={this.changeQuery} searchQuery={this.state.searchQuery}/>
-          <Animation />
+          <Animation className="Animation-Arrow"/>
           {/*Pages*/}
           <Routes>
             <Route path="/" element={<Home searchQuery={this.state.searchQuery}/>} />
-            <Route path="/league/:id" element={<LeaguePage changeQuery={this.changeQuery}/>} />
+            <Route path="/league/:id" element={<LeaguePage changeQuery={this.changeQuery} searchQuery={this.state.searchQuery}/>} />
             <Route path="/details/:id" element={<DetailSite />} />
           </Routes>
         </div>
