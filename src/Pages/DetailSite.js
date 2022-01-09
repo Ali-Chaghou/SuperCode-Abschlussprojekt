@@ -2,33 +2,29 @@ import React from "react";
 import "./DetailSite.css";
 
 class DetailSite extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       chosenTeam: [],
     };
   }
 
   componentDidMount() {
-    let pathname = window.location.pathname;
-    let leagueName = pathname.substring(
-      pathname.lastIndexOf("/") + 1,
-      pathname.lastIndexOf("+") + 1
-    );
-    let teamName = pathname.substring(
-      pathname.lastIndexOf("+") + 1,
-      pathname.length
-    );
-    console.log("TeamName: " + teamName.replace(/%/g, " "));
+    const params = decodeURIComponent(window.location.pathname.split("/")[2]);
+    const leagueAndTeam = new URLSearchParams(params);
+    console.log("league", leagueAndTeam.get("league"));
+    console.log("team", leagueAndTeam.get("team"));
 
     fetch(
-      `https://www.thesportsdb.com/api/v1/json/2/search_all_teams.php?l=${leagueName}`
+      `https://www.thesportsdb.com/api/v1/json/2/search_all_teams.php?l=${leagueAndTeam.get(
+        "league"
+      )}`
     )
       .then((res) => res.json())
       .then((res) => {
         this.setState({
           chosenTeam: res.teams.filter((team) =>
-            team.strTeam.includes(teamName.replace(/%/g, " "))
+            team.strTeam.includes(leagueAndTeam.get("team"))
           ),
         });
       });
@@ -127,11 +123,21 @@ class DetailSite extends React.Component {
                   </article>
                 </main>
                 <footer>
-                  <a href={team.strWebsite} target="_blank" >Website</a>
-                  <a href={team.strFacebook} target="_blank">Facebook</a>
-                  <a href={team.strTwitter} target="_blank">Twitter</a>
-                  <a href={team.strInstagram} target="_blank">Instagram</a>
-                  <a href={team.strYoutube} target="_blank">Youtube</a>
+                  <a href={team.strWebsite} target="_blank">
+                    Website
+                  </a>
+                  <a href={team.strFacebook} target="_blank">
+                    Facebook
+                  </a>
+                  <a href={team.strTwitter} target="_blank">
+                    Twitter
+                  </a>
+                  <a href={team.strInstagram} target="_blank">
+                    Instagram
+                  </a>
+                  <a href={team.strYoutube} target="_blank">
+                    Youtube
+                  </a>
                 </footer>
               </div>
             </article>

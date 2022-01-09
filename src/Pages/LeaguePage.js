@@ -12,8 +12,11 @@ class LeaguePage extends React.Component {
 
   componentDidMount() {
     let pathname = window.location.pathname;
-    let leagueName = pathname.substring(pathname.lastIndexOf("/") + 1, pathname.length);
-    this.props.changeQuery('');
+    let leagueName = pathname.substring(
+      pathname.lastIndexOf("/") + 1,
+      pathname.length
+    );
+    this.props.changeQuery("");
 
     fetch(
       `https://www.thesportsdb.com/api/v1/json/2/search_all_teams.php?l=${leagueName}`
@@ -30,14 +33,23 @@ class LeaguePage extends React.Component {
       <div className="div-league">
         <section className="list-wrapper">
           <div className="list">
-            {this.state.chosenLeague.filter(team => team.strTeam.toUpperCase().includes(this.props.searchQuery.toUpperCase()))
-                                  .map((team, index) => (
-              <Link to={`/details/${team.strLeague + "+" + team.strTeam}`}>
-                <h4 key={index} className="ScaleAnimation"> {/*Klasse-Animation hinztufügen*/}
-                  {team.strTeam} <span>{team.strStadiumLocation}</span>
-                </h4>
-              </Link> 
-            ))}
+            {this.state.chosenLeague
+              .filter((team) =>
+                team.strTeam
+                  .toUpperCase()
+                  .includes(this.props.searchQuery.toUpperCase())
+              )
+              .map((team, index) => (
+                <Link
+                  to={`/details/league=${encodeURIComponent(
+                    team.strLeague
+                  )}&team=${encodeURIComponent(team.strTeam)}`}
+                >
+                  <h4 key={index} className="ScaleAnimation">
+                    {team.strTeam} <span>{team.strStadiumLocation}</span>
+                  </h4>
+                </Link>
+              ))}
           </div>
         </section>
       </div>
