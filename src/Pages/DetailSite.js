@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./DetailSite.css";
-import { ExternalLink } from 'react-external-link';
+
 
 class DetailSite extends React.Component {
   constructor(props) {
