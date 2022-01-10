@@ -145,31 +145,19 @@ class DetailSite extends React.Component {
                   </article>
                 </main>
                 <footer>
-                  <a href={team.strWebsite} target="_blank" >Website</a>
-                  <a href="https://example.com"  rel="noopener noreferrer">Facebook</a>
-                  <a href={team.strTwitter} target="_blank">Twitter</a>
-                  <a href={team.strInstagram} target="_blank">Instagram</a>
-                  <a href={team.strYoutube} target="_blank" rel="noopener noreferrer">Youtube</a>
-                  <ExternalLink href={team.strYoutube}>test external link </ExternalLink>
-                  <Link to={{pathname: "www.facebook.com/Arsenal"} } target="_blank">test</Link>
-                  
-                  {/* <Link to={ `{team.strYoutube} } target="_blank">test</Link>
-                  <td onClick={()=> window.open(href={team.strYoutube} target="_blank")}>test</td> */}
-                  {/* <a onClick={()=> Linking.openURL(`${team.strYoutube}`)}>test</a> */}
-                {/* <a onClick={()=> window.location=}>test</a> */}
-                  <a href={team.strWebsite} target="_blank">
+                  <a href={`https://${team.strWebsite}`} target="_blank">
                     Website
                   </a>
-                  <a href={team.strFacebook} target="_blank">
+                  <a href={`https://${team.strFacebook}`} target="_blank">
                     Facebook
                   </a>
-                  <a href={team.strTwitter} target="_blank">
+                  <a href={`https://${team.strTwitter}`} target="_blank">
                     Twitter
                   </a>
-                  <a href={team.strInstagram} target="_blank">
+                  <a href={`https://${team.strInstagram}`} target="_blank">
                     Instagram
                   </a>
-                  <a href={team.strYoutube} target="_blank">
+                  <a href={`https://${team.strYoutube}`} target="_blank">
                     Youtube
                   </a>
                 </footer>
