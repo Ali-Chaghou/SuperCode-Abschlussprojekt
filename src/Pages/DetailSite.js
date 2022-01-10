@@ -114,7 +114,7 @@ class DetailSite extends React.Component {
                     </div>
                     <div>
                       <p>{team.strDescriptionEN}</p>
-                      <img src={team.strTeamBadge} alt="Team Badge" />
+                      <img className="team-badge" src={team.strTeamBadge} alt="Team Badge" />
                     </div>
                   </article>
                   <article className="stadium">

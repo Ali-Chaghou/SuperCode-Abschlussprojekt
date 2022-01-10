@@ -125,6 +125,11 @@
   font-size: 86px;
 }
 
+.team-badge{
+  width: 184px;
+  height: auto;
+}
+
 .description div:first-child {
   max-width: 15vw;
 }
