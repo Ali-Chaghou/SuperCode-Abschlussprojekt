@@ -1,6 +1,7 @@
 import "./HomeFilterBarList.css";
 import React from "react";
 import { Link } from "react-router-dom";
+import classNames from "classnames";
 
 //images
 import Close from "../Images/close.png";
@@ -14,6 +15,9 @@ class HomeFilterBarList extends React.Component {
       allcountries: [],
       allsports: [],
       chosenCountry: "",
+      isDropDownOpen: false,
+      isArrowUp: false,
+      isCountryShown: false,
     };
   }
 
@@ -33,95 +37,82 @@ class HomeFilterBarList extends React.Component {
       });
   }
 
-  openDropDown = () => {
-    document.querySelector(".dropdown").style.display = "block";
-    document
-      .querySelector(".select-wrapper-down")
-      .classList.add("select-wrapper-up");
-    document
-      .querySelector(".select-wrapper-up")
-      .classList.remove("select-wrapper-down");
+  toggleDropDown = () => {
+    if (this.state.isDropDownOpen === false) {
+      this.setState({ isDropDownOpen: true });
+      this.setState({ isArrowUp: true });
+    } else {
+      this.setState({ isDropDownOpen: false });
+      this.setState({ isArrowUp: false });
+    }
   };
-  closeDropDown = () => {
-    document.querySelector(".dropdown").style.display = "none";
-    document
-      .querySelector(".select-wrapper-up")
-      .classList.add("select-wrapper-down");
-    document
-      .querySelector(".select-wrapper-down")
-      .classList.remove("select-wrapper-up");
-  };
-  showCountry = (countryName) => {
-    document.querySelector(".chosen-country").style.opacity = "1";
-    console.log(countryName);
+
+  selectCountry = (countryName) => {
     this.setState({
       chosenCountry: countryName,
     });
+    console.log("nach selectCountry: " + this.state.chosenCountry);
   };
-  hideCountry = () => {
-    document.querySelector(".chosen-country").style.opacity = "0";
+  toggleCountry = () => {
+    if (this.state.isCountryShown === false) {
+      this.setState({ isCountryShown: true });
+    } else {
+      this.setState({ isCountryShown: false });
+      this.setState({ chosenCountry: "" });
+    }
   };
-
-  /* Hier ist di funktion für die RadioBox mit dem X-IMG */
-
-  closeRadioButton = () => {
-
-      const DisplayNone = document.querySelector('.checkmark');
-      DisplayNone.classList.toggle('Check');
+  clearCountry = (countryName) => {
+    if (this.state.chosenCountry === countryName) {
+      this.setState({ chosenCountry: "" });
+    }
+    console.log("nach clearCountry: " + this.state.chosenCountry);
   };
-
   render() {
+    let dropDownClass = classNames({
+      hidden: true,
+      "dropdown-shown": this.state.isDropDownOpen,
+    });
+
+    let arrowDownClass = classNames({
+      selectdown: true,
+      "select-wrapper-up": this.state.isArrowUp,
+    });
+
+    let showCountryClass = classNames({
+      countryHidden: true,
+      countryShown: this.state.isCountryShown,
+    });
+
     return (
       <div className="filterbar-list">
         <section className="filterbar">
-          <div className="chosen-country">
-            <img src={Close} alt="close" onClick={this.hideCountry}></img>
+          <div className={showCountryClass}>
+            <img src={Close} alt="close" onClick={this.toggleCountry}></img>
             {this.state.chosenCountry}
           </div>
           <div className="dropdowns">
-            <div className="select-wrapper-down">
-              <button onClick={this.openDropDown} className="select">
+            <div className={arrowDownClass}>
+              <button onClick={this.toggleDropDown} className="select">
                 All Countries
               </button>
             </div>
             <div className="dropdown-wrapper">
-              <div className="dropdown">
+              <div className={dropDownClass}>
                 {this.state.allcountries.map((country) => (
-                  <label
-                    key={country.name_en}
-                    className="container"
-                    value={country.name_en}
-                    onClick={() => {
-                      console.log("clicked");
-                      this.closeDropDown();
-                      this.showCountry(country.name_en);
-          
-                    }}
-                  >
+                  <label className="container">
                     <input
+                      value={country.name_en}
                       type="checkbox"
                       name="checkbox"
                       checked={this.state.chosenCountry === country.name_en}
-                    />
-                    <button
-                      // className="checkmark"
                       onClick={() => {
-                        if (this.state.chosenCountry === country.name_en) {
-
-                             {this.closeRadioButton()}
-                             console.log('Toggle Radio Button')
-
-                          console.log(
-                            this.state.chosenCountry === country.name_en
-                          );
-                          this.setState({ chosenCountry: "" });
-                        }
+                        this.toggleDropDown();
+                        this.selectCountry(country.name_en);
+                        this.toggleCountry();
+                        this.clearCountry(country.name_en);
                       }}
-                    >
-                 
-                     <div className="checkmark"></div>
-                      
-                    </button>
+                    />
+                    <span className="checkmark"></span>
                     {country.name_en}
                   </label>
                 ))}
@@ -131,14 +122,20 @@ class HomeFilterBarList extends React.Component {
         </section>
         <section className="list-wrapper">
           <div className="list">
-            {this.state.allLeagues.filter(league => league.strLeague.toUpperCase().includes(this.props.searchQuery.toUpperCase()))
-                                  .map((league, index) => (
-              <Link to={`/league/${league.strLeague}`}>
-                <h4 key={index} className="Left-to-right">
-                  {league.strLeague} <span>{league.strSport}</span>
-                </h4><br />
-              </Link>
-            ))}
+            {this.state.allLeagues
+              .filter((league) =>
+                league.strLeague
+                  .toUpperCase()
+                  .includes(this.props.searchQuery.toUpperCase())
+              )
+              .map((league, index) => (
+                <Link to={`/league/${league.strLeague}`}>
+                  <h4 key={index} className="Left-to-right">
+                    {league.strLeague} <span>{league.strSport}</span>
+                  </h4>
+                  <br />
+                </Link>
+              ))}
           </div>
         </section>
       </div>
@@ -147,4 +144,3 @@ class HomeFilterBarList extends React.Component {
 }
 
 export default HomeFilterBarList;
-
