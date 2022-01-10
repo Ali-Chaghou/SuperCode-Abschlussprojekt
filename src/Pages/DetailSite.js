@@ -1,5 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./DetailSite.css";
+
 
 class DetailSite extends React.Component {
   constructor(props) {
@@ -9,16 +11,26 @@ class DetailSite extends React.Component {
     };
   }
 
+  
+  
+
+  
+
   componentDidMount() {
     const params = decodeURIComponent(window.location.pathname.split("/")[2]);
     const leagueAndTeam = new URLSearchParams(params);
     console.log("league", leagueAndTeam.get("league"));
     console.log("team", leagueAndTeam.get("team"));
 
+
+
+
+
     fetch(
       `https://www.thesportsdb.com/api/v1/json/2/search_all_teams.php?l=${leagueAndTeam.get(
         "league"
       )}`
+      
     )
       .then((res) => res.json())
       .then((res) => {
@@ -26,8 +38,17 @@ class DetailSite extends React.Component {
           chosenTeam: res.teams.filter((team) =>
             team.strTeam.includes(leagueAndTeam.get("team"))
           ),
+
         });
+        
+
       });
+      
+      // Socialmedialink = () => (
+      //   <div>
+      //     <ExternalLink href={team.strYoutube} />
+      //   </div>
+      // );
   }
 
   render() {
@@ -116,19 +137,19 @@ class DetailSite extends React.Component {
                   </article>
                 </main>
                 <footer>
-                  <a href={team.strWebsite} target="_blank">
+                  <a href={`https://${team.strWebsite}`} target="_blank">
                     Website
                   </a>
-                  <a href={team.strFacebook} target="_blank">
+                  <a href={`https://${team.strFacebook}`} target="_blank">
                     Facebook
                   </a>
-                  <a href={team.strTwitter} target="_blank">
+                  <a href={`https://${team.strTwitter}`} target="_blank">
                     Twitter
                   </a>
-                  <a href={team.strInstagram} target="_blank">
+                  <a href={`https://${team.strInstagram}`} target="_blank">
                     Instagram
                   </a>
-                  <a href={team.strYoutube} target="_blank">
+                  <a href={`https://${team.strYoutube}`} target="_blank">
                     Youtube
                   </a>
                 </footer>
@@ -140,5 +161,7 @@ class DetailSite extends React.Component {
     );
   }
 }
+
+
 
 export default DetailSite;

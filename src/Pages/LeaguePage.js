@@ -45,6 +45,7 @@ class LeaguePage extends React.Component {
                     team.strLeague
                   )}&team=${encodeURIComponent(team.strTeam)}`}
                 >
+                  
                   <h4 key={index} className="ScaleAnimation">
                     {team.strTeam} <span>{team.strStadiumLocation}</span>
                   </h4>

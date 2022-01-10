@@ -75,3 +75,5 @@ class Animation extends React.Component {
 }
 
 export default Animation;
+
+/*Test Kommentar*/
