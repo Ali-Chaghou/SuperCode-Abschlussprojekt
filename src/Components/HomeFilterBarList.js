@@ -2,7 +2,9 @@ import "./HomeFilterBarList.css";
 import React from "react";
 import { Link } from "react-router-dom";
 
+//images
 import Close from "../Images/close.png";
+import Check from "../Images/Check.svg";
 
 class HomeFilterBarList extends React.Component {
   constructor() {
@@ -60,11 +62,19 @@ class HomeFilterBarList extends React.Component {
     document.querySelector(".chosen-country").style.opacity = "0";
   };
 
+  /* Hier ist di funktion für die RadioBox mit dem X-IMG */
+
+  closeRadioButton = () => {
+
+      const DisplayNone = document.querySelector('.checkmark');
+      DisplayNone.classList.toggle('Check');
+  };
+
   render() {
     return (
       <div className="filterbar-list">
         <section className="filterbar">
-          {/* <div className="chosen-country">
+          <div className="chosen-country">
             <img src={Close} alt="close" onClick={this.hideCountry}></img>
             {this.state.chosenCountry}
           </div>
@@ -85,6 +95,7 @@ class HomeFilterBarList extends React.Component {
                       console.log("clicked");
                       this.closeDropDown();
                       this.showCountry(country.name_en);
+          
                     }}
                   >
                     <input
@@ -93,29 +104,37 @@ class HomeFilterBarList extends React.Component {
                       checked={this.state.chosenCountry === country.name_en}
                     />
                     <button
-                      className="checkmark"
+                      // className="checkmark"
                       onClick={() => {
                         if (this.state.chosenCountry === country.name_en) {
+
+                             {this.closeRadioButton()}
+                             console.log('Toggle Radio Button')
+
                           console.log(
                             this.state.chosenCountry === country.name_en
                           );
                           this.setState({ chosenCountry: "" });
                         }
                       }}
-                    ></button>
+                    >
+                 
+                     <div className="checkmark"></div>
+                      
+                    </button>
                     {country.name_en}
                   </label>
                 ))}
               </div>
             </div>
-          </div> */}
+          </div>
         </section>
         <section className="list-wrapper">
           <div className="list">
             {this.state.allLeagues.filter(league => league.strLeague.toUpperCase().includes(this.props.searchQuery.toUpperCase()))
                                   .map((league, index) => (
               <Link to={`/league/${league.strLeague}`}>
-                <h4 key={index}> {/*evtl. classe mit animation left-to-right hinzufügen*/}
+                <h4 key={index} className="Left-to-right">
                   {league.strLeague} <span>{league.strSport}</span>
                 </h4><br />
               </Link>
@@ -129,4 +148,3 @@ class HomeFilterBarList extends React.Component {
 
 export default HomeFilterBarList;
 
-//unter 115 allLeagues filter einbauen, die query enthalten

@@ -5,7 +5,7 @@ import Loupe from '../Images/Searchloupe.svg';
 
 import React from 'react';
 
-//Components
+import { Link } from "react-router-dom";
 
 
 class Navbar extends React.Component {
@@ -44,48 +44,34 @@ class Navbar extends React.Component {
         let input = document.querySelector('#input-search').value;
         console.log(input);
         this.props.changeQuery(input);
+        const searchbar = document.querySelector('.form-searchbar');
+
         if(input.length > 0){
-            //setz css so dass es nicht klein wird
+            searchbar.style.width = '300px';
         } else {
-            // lösche das attribut dass es wieder klein werden kann
+            searchbar.style.width = '60px';
         }
     }
    
 
     render() { 
         return(
-         <div className='div-navbar navbar-sticky'>
-
-         <div className='div-logo'>
-            <h4 className='h4-navbar'>
-                <img src={Logo} alt='sports.db Logo'></img>
-                <span className="span-uppercase">sports.db</span></h4>
-        </div>
-
-        {/* <h2 className='STR-Sport'>{this.state.leagues.strSport}</h2> */}
-
-            {/* <section>
-                {this.state.leagues.map((league) => (
-                    <article key={league.strSport}>
-                        <h2>{league.strSport}</h2>
-                    </article>
-                ))}
-            </section> */}
-        
-        <form className='form-searchbar'>
-            <img src={Loupe} alt='searchloupe'></img>
-            <input type='text' id='input-search' className='input-search' onChange={this.onQueryEnter} value={this.props.searchQuery}></input>
-        </form>
-
-    </div>
-        )
-
+             
+            <div className='div-navbar navbar-sticky'>
+                <Link to="/">
+                    <div className='div-logo'>
+                        <h4 className='h4-navbar'>
+                            <img src={Logo} alt='sports.db Logo'></img>
+                            <span className="span-uppercase">sports.db</span></h4>
+                    </div>
+                </Link>
+                <form className='form-searchbar'>
+                    <img src={Loupe} alt='searchloupe'></img>
+                    <input type='text' id='input-search' className='input-search' onChange={this.onQueryEnter} value={this.props.searchQuery}></input>
+                </form>
+            </div>
+        );
     }
 }
  
 export default Navbar;
-
-
-
-//wenn eine query im App.js-state vorhanden ist, dann zeige die an
-//wenn eine query in Suche eingegeben wird, muss diese in App.js-state gespeichert werden

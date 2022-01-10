@@ -1,54 +1,55 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./DetailSite.css";
+import { ExternalLink } from 'react-external-link';
 
 class DetailSite extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       chosenTeam: [],
     };
   }
 
   
+  
+
+  
 
   componentDidMount() {
-    let pathname2 = window.location.pathname;
-    let leagueName = pathname2.substring(
-      pathname2.lastIndexOf("/") + 1,
-      pathname2.lastIndexOf("+") + 1
-    );
-    let teamName = pathname2.substring(
-      pathname2.lastIndexOf("+") + 1,
-      pathname2.length
-    );
-    console.log("TeamName: " + teamName.replace(/%/g, " "));
+    const params = decodeURIComponent(window.location.pathname.split("/")[2]);
+    const leagueAndTeam = new URLSearchParams(params);
+    console.log("league", leagueAndTeam.get("league"));
+    console.log("team", leagueAndTeam.get("team"));
 
 
 
 
 
     fetch(
-      `https://www.thesportsdb.com/api/v1/json/2/search_all_teams.php?l=${leagueName}`
+      `https://www.thesportsdb.com/api/v1/json/2/search_all_teams.php?l=${leagueAndTeam.get(
+        "league"
+      )}`
+      
     )
       .then((res) => res.json())
       .then((res) => {
         this.setState({
           chosenTeam: res.teams.filter((team) =>
-            team.strTeam.includes(teamName.replace(/%/g, " "))
+            team.strTeam.includes(leagueAndTeam.get("team"))
           ),
+
         });
+        
+
       });
+      
+      // Socialmedialink = () => (
+      //   <div>
+      //     <ExternalLink href={team.strYoutube} />
+      //   </div>
+      // );
   }
-
-
-
- 
-
-
-
-
-
 
 
   // selectTeam = () => {
@@ -145,16 +146,32 @@ class DetailSite extends React.Component {
                 </main>
                 <footer>
                   <a href={team.strWebsite} target="_blank" >Website</a>
-                  <a href="www.facebook.com/Arsenal"  rel="noopener noreferrer">Facebook</a>
+                  <a href="https://example.com"  rel="noopener noreferrer">Facebook</a>
                   <a href={team.strTwitter} target="_blank">Twitter</a>
                   <a href={team.strInstagram} target="_blank">Instagram</a>
-                  <a href={team.strYoutube} target="_blank">Youtube</a>
+                  <a href={team.strYoutube} target="_blank" rel="noopener noreferrer">Youtube</a>
+                  <ExternalLink href={team.strYoutube}>test external link </ExternalLink>
                   <Link to={{pathname: "www.facebook.com/Arsenal"} } target="_blank">test</Link>
                   
                   {/* <Link to={ `{team.strYoutube} } target="_blank">test</Link>
                   <td onClick={()=> window.open(href={team.strYoutube} target="_blank")}>test</td> */}
                   {/* <a onClick={()=> Linking.openURL(`${team.strYoutube}`)}>test</a> */}
                 {/* <a onClick={()=> window.location=}>test</a> */}
+                  <a href={team.strWebsite} target="_blank">
+                    Website
+                  </a>
+                  <a href={team.strFacebook} target="_blank">
+                    Facebook
+                  </a>
+                  <a href={team.strTwitter} target="_blank">
+                    Twitter
+                  </a>
+                  <a href={team.strInstagram} target="_blank">
+                    Instagram
+                  </a>
+                  <a href={team.strYoutube} target="_blank">
+                    Youtube
+                  </a>
                 </footer>
               </div>
             </article>

@@ -109,29 +109,63 @@
   left: 10px;
   height: 16px;
   width: 16px;
-  border: white 2px solid;
-  background-color: transparent;
+  background-image: url('../Images/Non-checked.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  list-style: none;
+  
 }
+
+
+ .Check {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  height: 16px;
+  width: 16px;
+  background-image: url('../Images/Check.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  list-style: none;
+} 
+
+
+
+
+
+
 /* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
+/* .checkmark:after {
   content: "";
   position: absolute;
   display: none;
-}
+} */
+
+
 /* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
+/* .container input:checked ~ .checkmark:after {
   display: block;
-}
+
+} */
+
+/* .containerNone input:checked ~ .checkmark:after {
+  display: none;
+  background-color: green;
+} */
+
+/* .none .checkmark:after {
+  content: none;
+} */
 /* Style the checkmark/indicator */
-.container .checkmark:after {
+/* .container .checkmark:after {
   left: 4px;
   top: 0px;
   width: 3px;
   height: 8px;
-  border: solid white;
+  border: solid red;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
-}
+} */
 /* .dropdowns {
   display: flex;
 }
