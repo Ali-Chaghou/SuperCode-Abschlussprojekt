@@ -98,6 +98,8 @@
 }
 
 .competitions div {
+  display: inline-flex;
+  flex-direction: column;
   margin-top: 60px;
 }
 .competitions p {

@@ -137,19 +137,19 @@ class DetailSite extends React.Component {
                   </article>
                 </main>
                 <footer>
-                  <a href={`https://${team.strWebsite}`} target="_blank">
+                  <a className="Left-to-right" href={`https://${team.strWebsite}`} target="_blank">
                     Website
                   </a>
-                  <a href={`https://${team.strFacebook}`} target="_blank">
+                  <a className="Left-to-right" href={`https://${team.strFacebook}`} target="_blank">
                     Facebook
                   </a>
-                  <a href={`https://${team.strTwitter}`} target="_blank">
+                  <a className="Left-to-right" href={`https://${team.strTwitter}`} target="_blank">
                     Twitter
                   </a>
-                  <a href={`https://${team.strInstagram}`} target="_blank">
+                  <a className="Left-to-right" href={`https://${team.strInstagram}`} target="_blank">
                     Instagram
                   </a>
-                  <a href={`https://${team.strYoutube}`} target="_blank">
+                  <a className="Left-to-right" href={`https://${team.strYoutube}`} target="_blank">
                     Youtube
                   </a>
                 </footer>
