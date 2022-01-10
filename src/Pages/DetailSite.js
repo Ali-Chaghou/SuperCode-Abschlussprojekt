@@ -30,15 +30,6 @@ class DetailSite extends React.Component {
       });
   }
 
-  // selectTeam = () => {
-  //   let ourTeam = this.state.chosenTeam.filter((team) =>
-  //     team.strTeam.includes("Arsenal")
-  //   );
-  //   this.setState({ chosenTeam: ourTeam });
-  //   console.log("selectTeamworks");
-  //   // console.log(this.state.chosenTeam.);
-  // };
-
   render() {
     return (
       <section className="detail-site">
@@ -48,36 +39,38 @@ class DetailSite extends React.Component {
               <div key={index}>
                 <header>
                   <section>
-                    <article className="detail-site-header-text">
-                      <div>
-                        <h3>{team.strAlternate}</h3>
-                        <h5>{team.strTeam} </h5>
-                        <h4>
-                          <span>Country</span>
-                        </h4>
-                      </div>
+                    <h3>{team.strTeam}</h3>
+                    <article className="header-text-img-wrapper">
+                      <article className="detail-site-header-text">
+                        <div>
+                          <h5>{team.strTeam} </h5>
+                          <h4>
+                            <span>Country</span>
+                          </h4>
+                        </div>
 
-                      <div>
-                        <h5>{team.strStadiumLocation}</h5>
-                        <h4>
-                          <span>Location</span>
-                        </h4>
-                      </div>
-                      <div>
-                        <h5>{team.intFormedYear}</h5>
-                        <h4>
-                          <span>Established</span>
-                        </h4>
-                      </div>
-                      <div>
-                        <h5>{team.strSport}</h5>
-                        <h4>
-                          <span>Sport</span>
-                        </h4>
-                      </div>
-                    </article>
-                    <article>
-                      <img src={team.strStadiumThumb} alt={team.strStadium} />
+                        <div>
+                          <h5>{team.strStadiumLocation}</h5>
+                          <h4>
+                            <span>Location</span>
+                          </h4>
+                        </div>
+                        <div>
+                          <h5>{team.intFormedYear}</h5>
+                          <h4>
+                            <span>Established</span>
+                          </h4>
+                        </div>
+                        <div>
+                          <h5>{team.strSport}</h5>
+                          <h4>
+                            <span>Sport</span>
+                          </h4>
+                        </div>
+                      </article>
+                      <article>
+                        <img src={team.strStadiumThumb} alt={team.strStadium} />
+                      </article>
                     </article>
                   </section>
                 </header>
