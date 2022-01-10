@@ -8,7 +8,7 @@
   margin-bottom: 96px;
 }
 /* Anzeige ausgwähltes Land */
-.chosen-country {
+.countryHidden {
   width: fit-content;
   height: 41px;
   border: solid 4px white;
@@ -18,7 +18,10 @@
   align-items: center;
   font-size: 18px;
 }
-.chosen-country img {
+.countryShown {
+  opacity: 1;
+}
+.countryShown img {
   margin-right: 10px;
   cursor: pointer;
 }
@@ -42,12 +45,13 @@
   border: solid 4px white;
   cursor: pointer;
 }
-.select-wrapper-down::after {
+.selectdown::after {
   content: url("../Images/arrow-down.png");
   position: absolute;
   right: 12px;
   top: 10px;
   pointer-events: none;
+  background-color: red;
 }
 .select-wrapper-up::after {
   content: url("../Images/arrow-up.png");
@@ -56,28 +60,30 @@
   top: 10px;
   pointer-events: none;
 }
-
-/* .select-wrapper::after {
-  content: url("../Images/arrow-up.png");
-  position: absolute;
-  right: 12px;
-  top: 10px;
-  pointer-events: none;
-  display: none;
-} */
 .dropdown-wrapper {
   position: relative;
 }
-.dropdown {
+.hidden {
   position: absolute;
   top: 0px;
   left: 0px;
   width: 300px;
-  height: 150px;
+  height: 220px;
   border: solid 4px white;
   border-top: none;
   overflow: scroll;
   display: none;
+}
+.dropdown-shown {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 300px;
+  height: 220px;
+  border: solid 4px white;
+  border-top: none;
+  overflow: scroll;
+  display: block;
 }
 .container {
   position: relative;
@@ -109,55 +115,46 @@
   left: 10px;
   height: 16px;
   width: 16px;
-  background-image: url('../Images/Non-checked.svg');
+  background-image: url("../Images/Non-checked.svg");
   background-repeat: no-repeat;
   background-size: cover;
   list-style: none;
-  
 }
 
-
- .Check {
+/* .Check {
   position: absolute;
   top: 10px;
   left: 10px;
   height: 16px;
   width: 16px;
-  background-image: url('../Images/Check.svg');
+  background-image: url("../Images/Check.svg");
   background-repeat: no-repeat;
   background-size: cover;
-  list-style: none;
-} 
-
-
-
-
-
+  list-style: none; */
+/* } */
 
 /* Create the checkmark/indicator (hidden when not checked) */
-/* .checkmark:after {
+.checkmark:after {
   content: "";
   position: absolute;
   display: none;
-} */
-
+}
 
 /* Show the checkmark when checked */
-/* .container input:checked ~ .checkmark:after {
+.container input:checked ~ .checkmark:after {
   display: block;
-
-} */
+}
 
 /* .containerNone input:checked ~ .checkmark:after {
   display: none;
   background-color: green;
 } */
 
-/* .none .checkmark:after {
+.none .checkmark:after {
   content: none;
-} */
+}
 /* Style the checkmark/indicator */
-/* .container .checkmark:after {
+.container .checkmark:after {
   left: 4px;
   top: 0px;
   width: 3px;
@@ -165,11 +162,11 @@
   border: solid red;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
-} */
+}
 /* .dropdowns {
   display: flex;
-}
-.countrySelect {
+} */
+/* .countrySelect {
   margin-right: 18px;
 }
 select {
