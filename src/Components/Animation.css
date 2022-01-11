@@ -46,7 +46,17 @@
    
 }
 
+.a-animation {
+  width: fit-content;
+}
 
+.a-animation::after {
+  bottom: 42px;
+}
+
+.h5-animation {
+  width: fit-content;
+}
 
 
 
