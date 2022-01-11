@@ -5,35 +5,50 @@ import classNames from "classnames";
 
 //images
 import Close from "../Images/close.png";
-import Check from "../Images/Check.svg";
 
 class HomeFilterBarList extends React.Component {
   constructor() {
     super();
     this.state = {
       allLeagues: [],
+      allLeaguesInitial: [],
       allcountries: [],
       allsports: [],
       chosenCountry: "",
+      chosenSport: "",
       isDropDownOpen: false,
       isArrowUp: false,
-      isCountryShown: false,
+      isSportShown: false,
     };
   }
 
-  componentDidMount() {
-    fetch("https://www.thesportsdb.com/api/v1/json/2/all_countries.php")
-      .then((res1) => res1.json())
-      .then((res1) => {
-        // console.log(res1);
-        this.setState({ allcountries: res1.countries });
+  componentWillMount() {
+    fetch("https://www.thesportsdb.com/api/v1/json/2/all_leagues.php")
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+        this.setState({ allLeagues: res.leagues });
       });
 
     fetch("https://www.thesportsdb.com/api/v1/json/2/all_leagues.php")
-      .then((res2) => res2.json())
-      .then((res2) => {
-        console.log(res2);
-        this.setState({ allLeagues: res2.leagues });
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+        this.setState({ allLeaguesInitial: res.leagues });
+      });
+
+    fetch("https://www.thesportsdb.com/api/v1/json/2/all_countries.php")
+      .then((res) => res.json())
+      .then((res) => {
+        // console.log(res);
+        this.setState({ allcountries: res.countries });
+      });
+
+    fetch("https://www.thesportsdb.com/api/v1/json/2/all_sports.php")
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+        this.setState({ allsports: res.sports });
       });
   }
 
@@ -47,26 +62,53 @@ class HomeFilterBarList extends React.Component {
     }
   };
 
-  selectCountry = (countryName) => {
+  // selectCountry = (countryName) => {
+  //   this.setState({
+  //     chosenCountry: countryName,
+  //   });
+  //   console.log("nach selectCountry: " + this.state.chosenCountry);
+  // };
+
+  selectSport = (sport) => {
     this.setState({
-      chosenCountry: countryName,
+      chosenSport: sport,
     });
-    console.log("nach selectCountry: " + this.state.chosenCountry);
   };
-  toggleCountry = () => {
-    if (this.state.isCountryShown === false) {
-      this.setState({ isCountryShown: true });
+
+  filterBySport = (sportType) => {
+    this.setState({
+      allLeagues: this.state.allLeagues.filter((sport) =>
+        sport.strSport.includes(sportType)
+      ),
+    });
+  };
+
+  toggleSportDisplay = () => {
+    if (this.state.isSportShown === false) {
+      this.setState({ isSportShown: true });
     } else {
-      this.setState({ isCountryShown: false });
-      this.setState({ chosenCountry: "" });
+      this.setState({ isSportShown: false });
+      this.setState({ chosenSport: "" });
+      this.setState({ allLeagues: this.state.allLeaguesInitial });
     }
   };
-  clearCountry = (countryName) => {
-    if (this.state.chosenCountry === countryName) {
-      this.setState({ chosenCountry: "" });
+  // clearAllLeaguesFromList = () => {
+  //   this.setState({ allLeagues: this.state.allLeaguesInitial });
+  // };
+
+  clearSport = (sport) => {
+    if (this.state.chosenSport === sport) {
+      this.setState({ chosenSport: "" });
+      this.setState({ allLeagues: this.state.allLeaguesInitial });
     }
-    console.log("nach clearCountry: " + this.state.chosenCountry);
   };
+
+  // clearLeague = (sport) => {
+  //   if (this.state.chosenSport === sport) {
+  //     this.setState({ allLeagues: this.state.allLeagues });
+  //   }
+  // };
+
   render() {
     let dropDownClass = classNames({
       hidden: true,
@@ -78,42 +120,47 @@ class HomeFilterBarList extends React.Component {
       "select-wrapper-up": this.state.isArrowUp,
     });
 
-    let showCountryClass = classNames({
-      countryHidden: true,
-      countryShown: this.state.isCountryShown,
+    let showSportClass = classNames({
+      sportHidden: true,
+      sportShown: this.state.isSportShown,
     });
 
     return (
       <div className="filterbar-list">
         <section className="filterbar">
-          <div className={showCountryClass}>
-            <img src={Close} alt="close" onClick={this.toggleCountry}></img>
-            {this.state.chosenCountry}
+          <div className={showSportClass}>
+            <img
+              src={Close}
+              alt="close"
+              onClick={this.toggleSportDisplay}
+            ></img>
+            {this.state.chosenSport}
           </div>
           <div className="dropdowns">
             <div className={arrowDownClass}>
               <button onClick={this.toggleDropDown} className="select">
-                All Countries
+                All Sports
               </button>
             </div>
             <div className="dropdown-wrapper">
               <div className={dropDownClass}>
-                {this.state.allcountries.map((country) => (
+                {this.state.allsports.map((sport) => (
                   <label className="container">
                     <input
-                      value={country.name_en}
+                      value={sport.strSport}
                       type="checkbox"
                       name="checkbox"
-                      checked={this.state.chosenCountry === country.name_en}
+                      checked={this.state.chosenSport === sport.strSport}
                       onClick={() => {
                         this.toggleDropDown();
-                        this.selectCountry(country.name_en);
-                        this.toggleCountry();
-                        this.clearCountry(country.name_en);
+                        this.selectSport(sport.strSport);
+                        this.toggleSportDisplay();
+                        this.filterBySport(sport.strSport);
+                        this.clearSport(sport.strSport);
                       }}
                     />
                     <span className="checkmark"></span>
-                    {country.name_en}
+                    {sport.strSport}
                   </label>
                 ))}
               </div>
