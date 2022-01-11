@@ -2,6 +2,10 @@
   margin: 0 48px 144px 48px;
 }
 
+.list-wrapper h4 {
+  line-height: 90px;
+}
+
 .filterbar {
   display: flex;
   justify-content: space-between;

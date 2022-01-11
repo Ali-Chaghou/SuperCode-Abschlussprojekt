@@ -45,7 +45,7 @@ h3 {
 h4 {
   font-family: "Montserrat", sans-serif;
   font-size: 48px;
-  line-height: 90px;
+  /* line-height: 90px; */
 }
 h4 span {
   font-family: "Open Sans", sans-serif;

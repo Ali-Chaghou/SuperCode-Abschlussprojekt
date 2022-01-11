@@ -55,7 +55,19 @@ class LeaguePage extends React.Component {
       <section className="div-league">
         <button onClick={this.showState}>Klick Mich</button>
         <section className="league-header-wrapper">
-          {this.state.sportImage.map((sport, index) => (
+          <div>
+            <section
+              className="league-header"
+              style={{
+                backgroundImage: `url(/img/${this.state.leagueSport}.jpg)`,
+              }}
+            >
+              <h1>{this.state.leagueName}</h1>
+              <h2>{this.state.leagueSport}</h2>
+            </section>
+          </div>
+
+          {/* {this.state.sportImage.map((sport, index) => (
             <div>
               <section
                 key={index}
@@ -70,7 +82,7 @@ class LeaguePage extends React.Component {
                 <h2>{this.state.leagueSport}</h2>
               </section>
             </div>
-          ))}
+          ))} */}
         </section>
         <section className="list-wrapper">
           <div className="list">
