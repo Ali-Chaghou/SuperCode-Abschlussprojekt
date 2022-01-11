@@ -26,7 +26,11 @@ class LeaguePage extends React.Component {
         console.log(res);
         this.setState({ chosenLeague: res.teams });
       });
+
+    
   }
+
+  // function 
 
   render() {
     return (
@@ -45,7 +49,7 @@ class LeaguePage extends React.Component {
                     team.strLeague
                   )}&team=${encodeURIComponent(team.strTeam)}`}
                 >
-                  
+
                   <h4 key={index} className="ScaleAnimation">
                     {team.strTeam} <span>{team.strStadiumLocation}</span>
                   </h4>

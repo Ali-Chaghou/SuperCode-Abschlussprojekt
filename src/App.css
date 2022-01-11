@@ -86,6 +86,7 @@ a {
 @media screen and (max-width: 768px) {
     h1{
       font-size: 134px;
+      line-height: 130px;
     }
     h2{
       font-size: 67px
@@ -105,19 +106,24 @@ a {
     P{
       font-size: 16px;
     }
+    h4 span {
+      font-size: 19px;
+    }
 
+   
 }
 
 /*Handy*/
 @media screen and (max-width: 576px) {
     h1{
       font-size: 93px;
+      line-height: 100px;
     }
     h2{
       font-size: 47px
     }
     h3{
-      font-size: 50px;
+      font-size: 60px;
     }
     h4{
       font-size: 16px;
@@ -131,4 +137,8 @@ a {
     p{
       font-size: 14px;
     }
+    h4 span {
+      font-size: 16px;
+    }
+    
 }

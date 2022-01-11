@@ -8,7 +8,7 @@
   margin-bottom: 96px;
 }
 /* Anzeige ausgwähltes Land */
-.countryHidden {
+.sportHidden {
   width: fit-content;
   height: 41px;
   border: solid 4px white;
@@ -18,16 +18,16 @@
   align-items: center;
   font-size: 18px;
 }
-.countryShown {
+.sportShown {
   opacity: 1;
 }
-.countryShown img {
+.sportShown img {
   margin-right: 10px;
   cursor: pointer;
 }
 
 /* Dropdown Menues */
-.select-wrapper-down,
+.selectdown,
 .select-wrapper-up {
   position: relative;
   width: 300px;
@@ -51,7 +51,6 @@
   right: 12px;
   top: 10px;
   pointer-events: none;
-  background-color: red;
 }
 .select-wrapper-up::after {
   content: url("../Images/arrow-up.png");

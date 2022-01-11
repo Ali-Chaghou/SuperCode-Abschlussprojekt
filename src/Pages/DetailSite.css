@@ -1,5 +1,6 @@
 .detail-site {
   padding: 5vw 5vw 5vw 5vw;
+
 }
 
 /*Ab hier Titel und Bild Header*/
@@ -11,25 +12,36 @@
 .detail-site h3 {
   color: var(--red);
   position: absolute;
-  top: 50px;
-  left: 0;
-  right: 0;
+  
+
+  left:0;
+  right:0;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  position: absolute;
+
   margin: 0 auto;
   text-align: center;
+  max-width: 600px;
+  z-index: 20;
 }
 
 .detail-site img {
   max-width: 100%;
 }
 
-.detail-site header section {
+.header-text-img-wrapper {
   display: flex;
   align-items: flex-end;
+  justify-content: center;
 }
 
-.detail-site header article {
+.header-text-img-wrapper article{
   width: 50%;
 }
+
 
 /*Ab hier Text Header links*/
 
@@ -46,17 +58,33 @@
 .detail-site h4 {
   margin: 0px;
   padding: 0px;
+  font-size: 18px;
 }
 
 .detail-site header div {
   text-align: center;
-  width: 40vw;
+  width: 30vw;
   margin-bottom: 5%;
 }
 
 .detail-site-header-text div:last-child {
   margin-bottom: 0;
 }
+
+/*AB hier Bild Rechts*/
+
+.detail-site header img {
+  height: 700px;
+  width: auto;
+  filter: grayscale(100%);
+  object-fit: cover;
+}
+
+.detail-site header img:hover {
+  filter: none;
+  transition: all 1s ease;
+}
+
 
 /*Ab hier MAIN*/
 
@@ -70,6 +98,8 @@
 }
 
 .competitions div {
+  display: inline-flex;
+  flex-direction: column;
   margin-top: 60px;
 }
 .competitions p {
@@ -93,6 +123,11 @@
     -1px 1px 0 var(--red), 1px 1px 0 var(--red);
   color: black;
   font-size: 86px;
+}
+
+.team-badge{
+  width: 184px;
+  height: auto;
 }
 
 .description div:first-child {
@@ -160,12 +195,14 @@ footer a {
 /*Tablet*/
 @media screen and (max-width: 768px) {
   .detail-site h3 {
-    display: inline-block;
-    margin: 0 0 50px 0;
+    display: block;
     position: static;
     width: 100%;
     text-align: center;
+    z-index: 50;
+    margin-bottom: 25px;
   }
+ 
 
   .stadium-wrapper {
     display: block;
@@ -254,9 +291,6 @@ footer a {
 
   /*Ab hier abstände*/
 
-  .detail-site header{
-      margin-bottom: 25%;
-  }
 
   .competitions{
       margin-bottom: 25%;
@@ -270,13 +304,4 @@ footer a {
   }
 }
 
-/*Name Verein Header*/
-@media screen and (max-width: 1040px) {
-  .detail-site h3 {
-    display: inline-block;
-    margin: 0 0 50px 0;
-    position: static;
-    width: 100%;
-    text-align: center;
-  }
-}
+
