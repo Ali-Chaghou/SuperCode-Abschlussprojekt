@@ -4,7 +4,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 48px;
+    padding: 96px 48px;
     overflow:hidden;
     width: 100%;
 } 
@@ -28,6 +28,7 @@
 .span-uppercase {
     margin-left: 12px;
     font-weight: 700;
+    text-transform: uppercase;
 }
 
 

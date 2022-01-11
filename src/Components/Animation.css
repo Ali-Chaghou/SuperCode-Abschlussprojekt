@@ -3,13 +3,14 @@
   y: 0;
   transition: all 1s linear;
   cursor: pointer;
-}  /*fehlt noch: wenn man runter geht, Füllung lässt von oben nach unten nach*/
+  z-index: 10;
+} 
 
 .icon-sticky {
  position: fixed;
  bottom: 50px;
  right: 50px;
-} /*sticky funktioniert noch nicht*/
+}
 
 .arrow-visible {
   opacity: 1;
@@ -45,7 +46,17 @@
    
 }
 
+.a-animation {
+  width: fit-content;
+}
 
+.a-animation::after {
+  bottom: 42px;
+}
+
+.h5-animation {
+  width: fit-content;
+}
 
 
 

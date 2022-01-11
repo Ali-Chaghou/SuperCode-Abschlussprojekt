@@ -80,12 +80,12 @@ class DetailSite extends React.Component {
                   <article className="competitions">
                     <p>Competitions</p>
                     <div>
-                      <h5 className="Left-to-right">{team.strLeague2}</h5>
-                      <h5 className="Left-to-right">{team.strLeague3}</h5>
-                      <h5 className="Left-to-right">{team.strLeague4}</h5>
-                      <h5 className="Left-to-right">{team.strLeague5}</h5>
-                      <h5 className="Left-to-right">{team.strLeague6}</h5>
-                      <h5 className="Left-to-right">{team.strLeague7}</h5>
+                      <h5 className="Left-to-right h5-animation">{team.strLeague2}</h5>
+                      <h5 className="Left-to-right h5-animation">{team.strLeague3}</h5>
+                      <h5 className="Left-to-right h5-animation">{team.strLeague4}</h5>
+                      <h5 className="Left-to-right h5-animation">{team.strLeague5}</h5>
+                      <h5 className="Left-to-right h5-animation">{team.strLeague6}</h5>
+                      <h5 className="Left-to-right h5-animation">{team.strLeague7}</h5>
                     </div>
                   </article>
                   <article className="description">
@@ -121,39 +121,19 @@ class DetailSite extends React.Component {
                   </article>
                 </main>
                 <footer>
-                  <a
-                    className="Left-to-right"
-                    href={`https://${team.strWebsite}`}
-                    target="_blank"
-                  >
+                  <a className="Left-to-right a-animation " href={`https://${team.strWebsite}`} target="_blank">
                     Website
                   </a>
-                  <a
-                    className="Left-to-right"
-                    href={`https://${team.strFacebook}`}
-                    target="_blank"
-                  >
+                  <a className="Left-to-right a-animation" href={`https://${team.strFacebook}`} target="_blank">
                     Facebook
                   </a>
-                  <a
-                    className="Left-to-right"
-                    href={`https://${team.strTwitter}`}
-                    target="_blank"
-                  >
+                  <a className="Left-to-right a-animation" href={`https://${team.strTwitter}`} target="_blank">
                     Twitter
                   </a>
-                  <a
-                    className="Left-to-right"
-                    href={`https://${team.strInstagram}`}
-                    target="_blank"
-                  >
+                  <a className="Left-to-right a-animation" href={`https://${team.strInstagram}`} target="_blank">
                     Instagram
                   </a>
-                  <a
-                    className="Left-to-right"
-                    href={`https://${team.strYoutube}`}
-                    target="_blank"
-                  >
+                  <a className="Left-to-right a-animation" href={`https://${team.strYoutube}`} target="_blank">
                     Youtube
                   </a>
                 </footer>
