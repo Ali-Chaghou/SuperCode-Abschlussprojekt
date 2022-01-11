@@ -35,6 +35,7 @@
 .select-wrapper-up {
   position: relative;
   width: 300px;
+  background-color: black;
   /* margin-left: 18px; */
 }
 .select {
@@ -76,6 +77,8 @@
   border-top: none;
   overflow: scroll;
   display: none;
+  background-color: black;
+  z-index: 10;
 }
 .dropdown-shown {
   position: absolute;
