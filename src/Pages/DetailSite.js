@@ -51,16 +51,6 @@ class DetailSite extends React.Component {
       // );
   }
 
-
-  // selectTeam = () => {
-  //   let ourTeam = this.state.chosenTeam.filter((team) =>
-  //     team.strTeam.includes("Arsenal")
-  //   );
-  //   this.setState({ chosenTeam: ourTeam });
-  //   console.log("selectTeamworks");
-  //   // console.log(this.state.chosenTeam.);
-  // };
-
   render() {
     return (
       <section className="detail-site">
@@ -70,36 +60,38 @@ class DetailSite extends React.Component {
               <div key={index}>
                 <header>
                   <section>
-                    <article className="detail-site-header-text">
-                      <div>
-                        <h3>{team.strAlternate}</h3>
-                        <h5>{team.strTeam} </h5>
-                        <h4>
-                          <span>Country</span>
-                        </h4>
-                      </div>
+                    <h3>{team.strTeam}</h3>
+                    <article className="header-text-img-wrapper">
+                      <article className="detail-site-header-text">
+                        <div>
+                          <h5>{team.strTeam} </h5>
+                          <h4>
+                            <span>Country</span>
+                          </h4>
+                        </div>
 
-                      <div>
-                        <h5>{team.strStadiumLocation}</h5>
-                        <h4>
-                          <span>Location</span>
-                        </h4>
-                      </div>
-                      <div>
-                        <h5>{team.intFormedYear}</h5>
-                        <h4>
-                          <span>Established</span>
-                        </h4>
-                      </div>
-                      <div>
-                        <h5>{team.strSport}</h5>
-                        <h4>
-                          <span>Sport</span>
-                        </h4>
-                      </div>
-                    </article>
-                    <article>
-                      <img src={team.strStadiumThumb} alt={team.strStadium} />
+                        <div>
+                          <h5>{team.strStadiumLocation}</h5>
+                          <h4>
+                            <span>Location</span>
+                          </h4>
+                        </div>
+                        <div>
+                          <h5>{team.intFormedYear}</h5>
+                          <h4>
+                            <span>Established</span>
+                          </h4>
+                        </div>
+                        <div>
+                          <h5>{team.strSport}</h5>
+                          <h4>
+                            <span>Sport</span>
+                          </h4>
+                        </div>
+                      </article>
+                      <article>
+                        <img src={team.strStadiumThumb} alt={team.strStadium} />
+                      </article>
                     </article>
                   </section>
                 </header>
@@ -122,7 +114,7 @@ class DetailSite extends React.Component {
                     </div>
                     <div>
                       <p>{team.strDescriptionEN}</p>
-                      <img src={team.strTeamBadge} alt="Team Badge" />
+                      <img className="team-badge" src={team.strTeamBadge} alt="Team Badge" />
                     </div>
                   </article>
                   <article className="stadium">
@@ -145,19 +137,19 @@ class DetailSite extends React.Component {
                   </article>
                 </main>
                 <footer>
-                  <a href={`https://${team.strWebsite}`} target="_blank">
+                  <a className="Left-to-right" href={`https://${team.strWebsite}`} target="_blank">
                     Website
                   </a>
-                  <a href={`https://${team.strFacebook}`} target="_blank">
+                  <a className="Left-to-right" href={`https://${team.strFacebook}`} target="_blank">
                     Facebook
                   </a>
-                  <a href={`https://${team.strTwitter}`} target="_blank">
+                  <a className="Left-to-right" href={`https://${team.strTwitter}`} target="_blank">
                     Twitter
                   </a>
-                  <a href={`https://${team.strInstagram}`} target="_blank">
+                  <a className="Left-to-right" href={`https://${team.strInstagram}`} target="_blank">
                     Instagram
                   </a>
-                  <a href={`https://${team.strYoutube}`} target="_blank">
+                  <a className="Left-to-right" href={`https://${team.strYoutube}`} target="_blank">
                     Youtube
                   </a>
                 </footer>
