@@ -28,9 +28,9 @@ h6 {
 h1 {
   font-family: "Montserrat", sans-serif;
   font-size: 168px;
+  line-height: 168px;
   text-align: right;
   color: var(--red);
-  line-height: 168px;
 }
 h2 {
   font-size: 84px;
@@ -45,6 +45,7 @@ h3 {
 h4 {
   font-family: "Montserrat", sans-serif;
   font-size: 48px;
+  line-height: 90px;
 }
 h4 span {
   font-family: "Open Sans", sans-serif;
@@ -57,7 +58,7 @@ h5 {
   font-weight: 700;
 }
 
-h6{
+h6 {
   font-size: 60px;
 }
 p {
@@ -75,70 +76,60 @@ a {
   color: white;
 }
 
-
-
-
-
-
-
-
 /*Tablet*/
 @media screen and (max-width: 768px) {
-    h1{
-      font-size: 134px;
-      line-height: 130px;
-    }
-    h2{
-      font-size: 67px
-    }
-    h3{
-      font-size: 76px;
-    }
-    h4{
-      font-size: 19px;
-    }
-    h5{
-      font-size: 29px;
-    }
-    h6{
-      font-size: 48px;
-    }
-    P{
-      font-size: 16px;
-    }
-    h4 span {
-      font-size: 19px;
-    }
-
-   
+  h1 {
+    font-size: 134px;
+    line-height: 130px;
+  }
+  h2 {
+    font-size: 67px;
+  }
+  h3 {
+    font-size: 76px;
+  }
+  h4 {
+    font-size: 19px;
+  }
+  h5 {
+    font-size: 29px;
+  }
+  h6 {
+    font-size: 48px;
+  }
+  P {
+    font-size: 16px;
+  }
+  h4 span {
+    font-size: 19px;
+  }
 }
 
 /*Handy*/
 @media screen and (max-width: 576px) {
-    h1{
-      font-size: 93px;
-      line-height: 100px;
-    }
-    h2{
-      font-size: 47px
-    }
-    h3{
-      font-size: 60px;
-    }
-    h4{
-      font-size: 16px;
-    }
-    h5{
-      font-size: 20px;
-    }
-    h6{
-      font-size: 33px;
-    }
-    p{
-      font-size: 14px;
-    }
-    h4 span {
-      font-size: 16px;
-    }
-    
+  h1 {
+    font-size: 93px;
+    line-height: 100px;
+  }
+  h2 {
+    font-size: 47px;
+  }
+  h3 {
+    font-size: 60px;
+  }
+  h4 {
+    font-size: 16px;
+  }
+  h5 {
+    font-size: 20px;
+  }
+  h6 {
+    font-size: 33px;
+  }
+  p {
+    font-size: 14px;
+  }
+  h4 span {
+    font-size: 16px;
+  }
 }

@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./DetailSite.css";
 
-
 class DetailSite extends React.Component {
   constructor(props) {
     super(props);
@@ -11,26 +10,16 @@ class DetailSite extends React.Component {
     };
   }
 
-  
-  
-
-  
-
   componentDidMount() {
     const params = decodeURIComponent(window.location.pathname.split("/")[2]);
     const leagueAndTeam = new URLSearchParams(params);
     console.log("league", leagueAndTeam.get("league"));
     console.log("team", leagueAndTeam.get("team"));
 
-
-
-
-
     fetch(
       `https://www.thesportsdb.com/api/v1/json/2/search_all_teams.php?l=${leagueAndTeam.get(
         "league"
       )}`
-      
     )
       .then((res) => res.json())
       .then((res) => {
@@ -38,17 +27,8 @@ class DetailSite extends React.Component {
           chosenTeam: res.teams.filter((team) =>
             team.strTeam.includes(leagueAndTeam.get("team"))
           ),
-
         });
-        
-
       });
-      
-      // Socialmedialink = () => (
-      //   <div>
-      //     <ExternalLink href={team.strYoutube} />
-      //   </div>
-      // );
   }
 
   render() {
@@ -114,7 +94,11 @@ class DetailSite extends React.Component {
                     </div>
                     <div>
                       <p>{team.strDescriptionEN}</p>
-                      <img className="team-badge" src={team.strTeamBadge} alt="Team Badge" />
+                      <img
+                        className="team-badge"
+                        src={team.strTeamBadge}
+                        alt="Team Badge"
+                      />
                     </div>
                   </article>
                   <article className="stadium">
@@ -137,19 +121,39 @@ class DetailSite extends React.Component {
                   </article>
                 </main>
                 <footer>
-                  <a className="Left-to-right" href={`https://${team.strWebsite}`} target="_blank">
+                  <a
+                    className="Left-to-right"
+                    href={`https://${team.strWebsite}`}
+                    target="_blank"
+                  >
                     Website
                   </a>
-                  <a className="Left-to-right" href={`https://${team.strFacebook}`} target="_blank">
+                  <a
+                    className="Left-to-right"
+                    href={`https://${team.strFacebook}`}
+                    target="_blank"
+                  >
                     Facebook
                   </a>
-                  <a className="Left-to-right" href={`https://${team.strTwitter}`} target="_blank">
+                  <a
+                    className="Left-to-right"
+                    href={`https://${team.strTwitter}`}
+                    target="_blank"
+                  >
                     Twitter
                   </a>
-                  <a className="Left-to-right" href={`https://${team.strInstagram}`} target="_blank">
+                  <a
+                    className="Left-to-right"
+                    href={`https://${team.strInstagram}`}
+                    target="_blank"
+                  >
                     Instagram
                   </a>
-                  <a className="Left-to-right" href={`https://${team.strYoutube}`} target="_blank">
+                  <a
+                    className="Left-to-right"
+                    href={`https://${team.strYoutube}`}
+                    target="_blank"
+                  >
                     Youtube
                   </a>
                 </footer>
@@ -161,7 +165,5 @@ class DetailSite extends React.Component {
     );
   }
 }
-
-
 
 export default DetailSite;

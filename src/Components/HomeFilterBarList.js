@@ -22,7 +22,7 @@ class HomeFilterBarList extends React.Component {
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     fetch("https://www.thesportsdb.com/api/v1/json/2/all_leagues.php")
       .then((res) => res.json())
       .then((res) => {
@@ -176,7 +176,8 @@ class HomeFilterBarList extends React.Component {
                   .includes(this.props.searchQuery.toUpperCase())
               )
               .map((league, index) => (
-                <Link to={`/league/${league.strLeague}`}>
+                <Link
+                  to={`/league/league=${encodeURIComponent(league.strLeague)}&sport=${encodeURIComponent(league.strSport)}`}>
                   <h4 key={index} className="Left-to-right">
                     {league.strLeague} <span>{league.strSport}</span>
                   </h4>

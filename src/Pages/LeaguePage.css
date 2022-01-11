@@ -1,5 +1,13 @@
-
-.div-league{
-  margin: 0 48px 96px 48px  
+.league-header {
+  width: 100vw;
+  min-height: 780px;
+  /* background-image: url("../Images/American_Football.jpg"); */
+  background-repeat: no-repeat;
+  background-size: 540px 220px;
+  background-position: 15% 0%;
+  padding: 144px 48px 0 0;
+  margin-bottom: 96px;
 }
-
+.div-league .list {
+  margin: 0 48px 96px 48px;
+}
