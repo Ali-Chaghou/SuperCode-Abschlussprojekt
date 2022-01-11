@@ -19,6 +19,9 @@ class LeaguePage extends React.Component {
     console.log("league", leagueAndSport.get("league"));
     console.log("sport", leagueAndSport.get("sport"));
 
+    // let sport = leagueAndSport.get("sport");
+    // sport.replace(/\s/g, "-");
+
     this.setState({ leagueSport: leagueAndSport.get("sport") });
     this.setState({ leagueName: leagueAndSport.get("league") });
 
@@ -46,43 +49,24 @@ class LeaguePage extends React.Component {
       });
   }
 
-  showState = () => {
-    console.log("leagueSport", this.state.leagueSport);
-  };
-
   render() {
     return (
       <section className="div-league">
-        <button onClick={this.showState}>Klick Mich</button>
         <section className="league-header-wrapper">
           <div>
             <section
               className="league-header"
               style={{
-                backgroundImage: `url(/img/${this.state.leagueSport}.jpg)`,
+                backgroundImage: `url(/img/sports/${this.state.leagueSport.replace(
+                  /\s/g,
+                  "-"
+                )}.jpg)`,
               }}
             >
               <h1>{this.state.leagueName}</h1>
               <h2>{this.state.leagueSport}</h2>
             </section>
           </div>
-
-          {/* {this.state.sportImage.map((sport, index) => (
-            <div>
-              <section
-                key={index}
-                className="league-header"
-                style={{
-                  backgroundImage: `url(${sport.strSportThumb})`,
-                  filter: "grayscale(100%)",
-                }}
-              ></section>
-              <section className="noFilter">
-                <h1>{this.state.leagueName}</h1>
-                <h2>{this.state.leagueSport}</h2>
-              </section>
-            </div>
-          ))} */}
         </section>
         <section className="list-wrapper">
           <div className="list">
